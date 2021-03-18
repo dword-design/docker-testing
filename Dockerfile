@@ -1,3 +1,5 @@
 FROM alekzonder/puppeteer:latest
 
-RUN apt-get install git
+USER root
+
+RUN apt-get update && apt-get install git -y
