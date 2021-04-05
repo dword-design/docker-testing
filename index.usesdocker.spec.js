@@ -2,28 +2,30 @@ import { endent } from '@dword-design/functions'
 import tester from '@dword-design/tester'
 import testerPluginDocker from '@dword-design/tester-plugin-docker'
 import execa from 'execa'
-import { outputFile } from 'fs-extra'
+import outputFiles from 'output-files'
 import packageName from 'depcheck-package-name'
+import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default tester(
   {
     git: () => execa.command('docker run --rm self git --version'),
     ps: () => execa.command('docker run --rm self ps'),
-    puppeteer: async () => {
-      await outputFile(
-        'index.js',
-        endent`
-        const puppeteer = require('${packageName`@dword-design/puppeteer`}')
+    puppeteer: () => withLocalTmpDir(async () => {
+      await outputFiles({
+        'index.js': endent`
+          const puppeteer = require('${packageName`@dword-design/puppeteer`}')
 
-        const run = async () => {
-          const browser = await puppeteer.launch()
-          await browser.close()
-        }
+          const run = async () => {
+            const browser = await puppeteer.launch()
+            await browser.close()
+          }
 
-        run()
+          run()
 
-      `
-      )
+        `,
+        'package.json': JSON.stringify({ name: 'foo' }),
+      })
+      await execa.command('yarn add @dword-design/puppeteer')
       await execa('docker', [
         'run',
         '--rm',
@@ -33,7 +35,7 @@ export default tester(
         'node',
         '/app/index.js',
       ])
-    },
+    }),
   },
   [testerPluginDocker()]
 )
