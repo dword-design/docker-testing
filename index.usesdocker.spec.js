@@ -10,6 +10,7 @@ export default tester(
   {
     git: () => execa.command('docker run --rm self git --version'),
     ps: () => execa.command('docker run --rm self ps'),
+    dot: () => execa.command('docker run --rm self dot -V'),
     puppeteer: () => withLocalTmpDir(async () => {
       await outputFiles({
         'index.js': endent`
