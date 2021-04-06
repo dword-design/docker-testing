@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dword-design/docker-testing/compare/v1.0.1...v1.1.0) (2021-04-06)
+
+
+### Features
+
+* add graphviz ([#3](https://github.com/dword-design/docker-testing/issues/3)) ([7a5fd5f](https://github.com/dword-design/docker-testing/commit/7a5fd5fff32ea58a201e13dad35f95d16c937232))
+
 ## [1.0.1](https://github.com/dword-design/docker-testing/compare/v1.0.0...v1.0.1) (2021-04-06)
 
 
