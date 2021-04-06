@@ -1063,9 +1063,9 @@
     param-case "^3.0.3"
 
 "@dword-design/base-config-docker@^1.0.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@dword-design/base-config-docker/-/base-config-docker-1.1.1.tgz#3d5dd806f7466452da727d63fc3240f778e65649"
-  integrity sha512-MSz1ikdH4oem6RFKS8tMBLyjj1Gan7nl8jP1ZDIGBeYZ+paL7/lUIoQrSQmEGSvmyNMX/MfMAq/6jLVMfCZ/Ug==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@dword-design/base-config-docker/-/base-config-docker-1.1.2.tgz#525d76b11e0cb493e1124383cce88422ca7d3bf3"
+  integrity sha512-+aWAOO5FH4EV8ecjqMIDjt9lpxvX4cvTuKUcfYTUzOChXCXJ4hKkjDBfO6oYzRFZ8eG9FlphCFRIBp7KZMoQ1g==
   dependencies:
     depcheck-package-name "^1.0.5"
     load-pkg "^4.0.0"
@@ -1212,11 +1212,14 @@
     puppeteer "^8.0.0"
 
 "@dword-design/tester-plugin-docker@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-docker/-/tester-plugin-docker-1.0.0.tgz#1c550d7f5c841e01ae6f1cc2f39193d8d02586a9"
-  integrity sha512-ARgr8+HvpSwSF03KEDQ2PxclbeawoffzfpCDTUxCuagC7nHN8FhJOHxL46nv0jnyyFALZ++E+F//41uQXtbY2g==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-docker/-/tester-plugin-docker-1.1.0.tgz#fc991a633b6ded51ce048126aa8023343b7c1f88"
+  integrity sha512-X9uJPI9CqTpMVqjOUI1dpb+VDFsg3FqOMM20O5WcRAFI/MwUUQVRGA9wqfgA5hiSp088dwEkxceJprnc3WQmeg==
   dependencies:
+    "@dword-design/functions" "^3.0.0"
     execa "^5.0.0"
+    find-up "^5.0.0"
+    fs-extra "^9.1.0"
 
 "@dword-design/tester@^1.2.4":
   version "1.2.4"
@@ -4168,7 +4171,7 @@ fs-extra@8.1.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^9.0.0:
+fs-extra@^9.0.0, fs-extra@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
   integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
