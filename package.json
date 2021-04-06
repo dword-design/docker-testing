@@ -1,0 +1,35 @@
+{
+  "name": "@dword-design/docker-testing",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "dword-design/docker-testing",
+  "funding": "https://www.buymeacoffee.com/dword",
+  "license": "MIT",
+  "author": "Sebastian Landwehr <info@dword-design.de>",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "checkUnknownFiles": "base checkUnknownFiles",
+    "commit": "base commit",
+    "lint": "base lint",
+    "prepare": "base prepare",
+    "test": "base test"
+  },
+  "devDependencies": {
+    "@dword-design/base": "^7.12.0",
+    "@dword-design/base-config-docker": "^1.0.1",
+    "@dword-design/functions": "^3.0.0",
+    "@dword-design/puppeteer": "^3.0.3",
+    "@dword-design/tester": "^1.2.4",
+    "@dword-design/tester-plugin-docker": "^1.0.0",
+    "depcheck-package-name": "^1.0.5",
+    "execa": "^5.0.0",
+    "output-files": "^1.1.24",
+    "with-local-tmp-dir": "^2.2.18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "baseConfig": "@dword-design/docker"
+}
