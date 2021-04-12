@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/dword-design/docker-testing/compare/v1.1.0...v1.1.1) (2021-04-12)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#4](https://github.com/dword-design/docker-testing/issues/4)) ([469fade](https://github.com/dword-design/docker-testing/commit/469fadedf77007cc84fa4c8733ef5fc16b6a7176))
+
 # [1.1.0](https://github.com/dword-design/docker-testing/compare/v1.0.1...v1.1.0) (2021-04-06)
 
 
