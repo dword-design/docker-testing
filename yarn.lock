@@ -1062,15 +1062,15 @@
     find-up "^5.0.0"
     param-case "^3.0.3"
 
-"@dword-design/base-config-docker@^1.0.1":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@dword-design/base-config-docker/-/base-config-docker-1.1.4.tgz#88f866252e597c68c9e6d2b5e5ef22adb13b7b71"
-  integrity sha512-Tobuu6DfV3YcWJUa51d4PSpT5UD2RCVtt+2MwUMiV6Xq7OVzpQEW6/kQpZNzvVY+yHv+vsIj3EhvJnIxZ9ZNYA==
+"@dword-design/base-config-docker@^1.1.4":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@dword-design/base-config-docker/-/base-config-docker-1.1.5.tgz#5a21d0a266153735478294c8ff809e3bb5de72d9"
+  integrity sha512-ufMjHMW5BPP6sp3sXDZKzG+C4nYWdVU4xbVikxyHKw8C6b+QXWqKV5axYhlYddJ+qI7v1iUxVh0pCcK0oq/HqA==
   dependencies:
     "@semantic-release/exec" "^5.0.0"
     depcheck-package-name "^1.0.5"
     load-pkg "^4.0.0"
-    parse-pkg-name "^2.0.0"
+    parse-packagejson-name "^1.0.1"
     semantic-release-docker "^2.2.0"
 
 "@dword-design/base-config-node@^1.6.0":
@@ -6830,13 +6830,6 @@ output-files@^1.1.24, output-files@^1.1.7:
     "@dword-design/functions" "^3.0.0"
     fs-extra "^9.0.0"
 
-ow@^0.15.1:
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/ow/-/ow-0.15.1.tgz#ad21bb4d4c46d4478b948522e36b214f6f13039d"
-  integrity sha512-rwiuvCnk3Ug9T4s5oKzw3QXQSiTXlTUiQgHmZ9Ozw/37YzeX8LycosVKOtO3v5+fuARGmCgz9rVhaBJeGV+2bQ==
-  dependencies:
-    type-fest "^0.8.1"
-
 p-each-series@^2.1.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/p-each-series/-/p-each-series-2.2.0.tgz#105ab0357ce72b202a8a8b94933672657b5e2a9a"
@@ -7047,23 +7040,15 @@ parse-json@^5.0.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
-parse-package-name@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/parse-package-name/-/parse-package-name-0.1.0.tgz#3f44dd838feb4c2be4bf318bae4477d7706bade4"
-  integrity sha1-P0Tdg4/rTCvkvzGLrkR313BrreQ=
+parse-packagejson-name@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/parse-packagejson-name/-/parse-packagejson-name-1.0.1.tgz#ab5b322cd38c87b4a01620683cca56ad74c006a0"
+  integrity sha1-q1syLNOMh7SgFiBoPMpWrXTABqA=
 
 parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
   integrity sha1-bVuTSkVpk7I9N/QKOC1vFmao5cY=
-
-parse-pkg-name@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/parse-pkg-name/-/parse-pkg-name-2.0.0.tgz#371086cd9bf03a8986bee56763cb2ec7f53024f0"
-  integrity sha512-jlikWandLTJEXOhr55uSnHfvnMUSW9g5PxWpkRt6mmuhdH9CfeJfnjJB97j7p9b7gCsJP1y78BovTF8dLjvoog==
-  dependencies:
-    ow "^0.15.1"
-    parse-package-name "^0.1.0"
 
 pascalcase@^0.1.1:
   version "0.1.1"
