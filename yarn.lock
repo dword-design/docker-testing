@@ -1212,10 +1212,10 @@
   dependencies:
     puppeteer "^8.0.0"
 
-"@dword-design/tester-plugin-docker@^1.0.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-docker/-/tester-plugin-docker-1.1.0.tgz#fc991a633b6ded51ce048126aa8023343b7c1f88"
-  integrity sha512-X9uJPI9CqTpMVqjOUI1dpb+VDFsg3FqOMM20O5WcRAFI/MwUUQVRGA9wqfgA5hiSp088dwEkxceJprnc3WQmeg==
+"@dword-design/tester-plugin-docker@^1.1.0":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-docker/-/tester-plugin-docker-1.1.1.tgz#12dcf0185ca63a5aa2a74823e5bd6963b121c5ed"
+  integrity sha512-qqUHZDlTkDZrKpWx5pguY15F6NFHaGSA6YUz/NbEzuY/azZlYt5PB2OMlrAtDZQj63kxqdQ7qU3cxhEnvZau/g==
   dependencies:
     "@dword-design/functions" "^3.0.0"
     execa "^5.0.0"
