@@ -1,7 +1,7 @@
 {
   "name": "@dword-design/docker-testing",
   "version": "1.1.1",
-  "description": "",
+  "description": null,
   "repository": "dword-design/docker-testing",
   "funding": "https://www.buymeacoffee.com/dword",
   "license": "MIT",
@@ -31,5 +31,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "baseConfig": "@dword-design/docker"
+  "baseConfig": "@dword-design/docker",
+  "homepage": null,
+  "keywords": []
 }
