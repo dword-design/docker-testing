@@ -1,3 +1,11 @@
+## [1.1.4](https://github.com/dword-design/docker-testing/compare/v1.1.3...v1.1.4) (2021-04-26)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/puppeteer to v4 ([#15](https://github.com/dword-design/docker-testing/issues/15)) ([f4d63b6](https://github.com/dword-design/docker-testing/commit/f4d63b6d3fc466aaa882752beb3eea0751ddd7c6))
+* update dependency with-local-tmp-dir to v3 ([#10](https://github.com/dword-design/docker-testing/issues/10)) ([7a34fe6](https://github.com/dword-design/docker-testing/commit/7a34fe6f60d9251fc1f32088bf850cd0095ed32d))
+
 ## [1.1.3](https://github.com/dword-design/docker-testing/compare/v1.1.2...v1.1.3) (2021-04-22)
 
 
