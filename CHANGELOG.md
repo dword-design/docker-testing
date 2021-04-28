@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/dword-design/docker-testing/compare/v1.1.4...v1.1.5) (2021-04-28)
+
+
+### Bug Fixes
+
+* updated package.json[description] ([#13](https://github.com/dword-design/docker-testing/issues/13)) ([f43dfa8](https://github.com/dword-design/docker-testing/commit/f43dfa8fc6d7a45224fb8ae1d09fe125fea2fbc6))
+
 ## [1.1.4](https://github.com/dword-design/docker-testing/compare/v1.1.3...v1.1.4) (2021-04-26)
 
 
