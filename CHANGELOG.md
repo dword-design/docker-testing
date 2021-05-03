@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/dword-design/docker-testing/compare/v1.1.5...v1.1.6) (2021-05-03)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v8 ([#17](https://github.com/dword-design/docker-testing/issues/17)) ([523a398](https://github.com/dword-design/docker-testing/commit/523a398839449da99cc6618fe1e4c2ce4580dbc1))
+
 ## [1.1.5](https://github.com/dword-design/docker-testing/compare/v1.1.4...v1.1.5) (2021-04-28)
 
 
