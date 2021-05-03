@@ -24,7 +24,7 @@
     "@dword-design/tester-plugin-docker": "^2.0.0",
     "depcheck-package-name": "^1.0.5",
     "execa": "^5.0.0",
-    "output-files": "^1.1.24",
+    "output-files": "^2.0.0",
     "with-local-tmp-dir": "^3.0.0"
   },
   "engines": {
