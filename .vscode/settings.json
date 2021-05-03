@@ -5,6 +5,7 @@
     ".commitlintrc.json": true,
     ".cz.json": true,
     ".editorconfig": true,
+    ".eslintrc.json": true,
     ".gitattributes": true,
     ".github": true,
     ".gitignore": true,
