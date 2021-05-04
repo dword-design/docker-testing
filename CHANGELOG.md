@@ -1,3 +1,12 @@
+## [1.1.9](https://github.com/dword-design/docker-testing/compare/v1.1.8...v1.1.9) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4 ([#18](https://github.com/dword-design/docker-testing/issues/18)) ([548056e](https://github.com/dword-design/docker-testing/commit/548056ef0b36d9f4558f725e004ca1da4ab6f4fd))
+* update dependency @dword-design/tester to v2 ([#20](https://github.com/dword-design/docker-testing/issues/20)) ([6370750](https://github.com/dword-design/docker-testing/commit/637075053499e842609490c3fee0f92075919456))
+* update dependency depcheck-package-name to v2 ([#22](https://github.com/dword-design/docker-testing/issues/22)) ([8f2c9de](https://github.com/dword-design/docker-testing/commit/8f2c9dedb285554f3d866d27cae0f1e1b2eb2e1a))
+
 ## [1.1.8](https://github.com/dword-design/docker-testing/compare/v1.1.7...v1.1.8) (2021-05-04)
 
 
