@@ -1,3 +1,12 @@
+## [1.1.7](https://github.com/dword-design/docker-testing/compare/v1.1.6...v1.1.7) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/puppeteer to v5 ([#19](https://github.com/dword-design/docker-testing/issues/19)) ([9a2466c](https://github.com/dword-design/docker-testing/commit/9a2466c9924922bd1057c6c1ba5d0fab1e92ac03))
+* update dependency @dword-design/tester-plugin-docker to v2 ([#21](https://github.com/dword-design/docker-testing/issues/21)) ([aa8716b](https://github.com/dword-design/docker-testing/commit/aa8716bacd5822f27d4fb358725d9266724d734d))
+* update dependency output-files to v2 ([#23](https://github.com/dword-design/docker-testing/issues/23)) ([e08eb1e](https://github.com/dword-design/docker-testing/commit/e08eb1e239e338955ad740165aaaf48f0afd3a83))
+
 ## [1.1.6](https://github.com/dword-design/docker-testing/compare/v1.1.5...v1.1.6) (2021-05-03)
 
 
