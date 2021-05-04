@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/dword-design/docker-testing/compare/v1.1.7...v1.1.8) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency with-local-tmp-dir to v4 ([#24](https://github.com/dword-design/docker-testing/issues/24)) ([d91cbc2](https://github.com/dword-design/docker-testing/commit/d91cbc2ed7001d4e00f84ae11c890580f2ed4844))
+
 ## [1.1.7](https://github.com/dword-design/docker-testing/compare/v1.1.6...v1.1.7) (2021-05-04)
 
 
