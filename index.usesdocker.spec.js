@@ -3,13 +3,21 @@ import tester from '@dword-design/tester'
 import testerPluginDocker from '@dword-design/tester-plugin-docker'
 import packageName from 'depcheck-package-name'
 import execa from 'execa'
+import nodeVersionAlias from 'node-version-alias'
 import outputFiles from 'output-files'
+import semverMajor from 'semver/functions/major'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default tester(
   {
     dot: () => execa.command('docker run --rm self dot -V'),
     git: () => execa.command('docker run --rm self git --version'),
+    'nodejs version': async () => {
+      const output = await execa.command('docker run --rm self node -v')
+      expect(output.stdout |> semverMajor).toEqual(
+        nodeVersionAlias('lts') |> await |> semverMajor
+      )
+    },
     ps: () => execa.command('docker run --rm self ps'),
     puppeteer: () =>
       withLocalTmpDir(async () => {
