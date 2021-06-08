@@ -1,3 +1,10 @@
+## [1.1.11](https://github.com/dword-design/docker-testing/compare/v1.1.10...v1.1.11) (2021-06-08)
+
+
+### Bug Fixes
+
+* use buildkite/puppeteer to have node lts version ([#28](https://github.com/dword-design/docker-testing/issues/28)) ([9e28ffc](https://github.com/dword-design/docker-testing/commit/9e28ffc110fa926c5a76b5a61a95ecaeb2723640))
+
 ## [1.1.10](https://github.com/dword-design/docker-testing/compare/v1.1.9...v1.1.10) (2021-05-28)
 
 
