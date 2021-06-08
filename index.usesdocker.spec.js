@@ -14,7 +14,7 @@ export default tester(
     dot: () => execa.command('docker run --rm self dot -V'),
     files: () =>
       withLocalTmpDir(async () => {
-        await outputFile('foo.txt', '')
+        await outputFile('package.json', JSON.stringify({ name: 'foo' }))
 
         const output = await execa('docker', [
           'run',
@@ -22,9 +22,11 @@ export default tester(
           '-v',
           `${process.cwd()}:/app`,
           'self',
-          'ls',
+          'bash',
+          '-c',
+          'cat package.json',
         ])
-        expect(output.stdout).toEqual('foo.txt')
+        expect(output.stdout).toEqual(JSON.stringify({ name: 'foo' }))
       }),
     git: () => execa.command('docker run --rm self git --version'),
     'nodejs version': async () => {
