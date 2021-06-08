@@ -1,3 +1,10 @@
+## [1.1.12](https://github.com/dword-design/docker-testing/compare/v1.1.11...v1.1.12) (2021-06-08)
+
+
+### Bug Fixes
+
+* fix workdir ([f016e2b](https://github.com/dword-design/docker-testing/commit/f016e2b01abbe5f7dc7605b4b1c0f53906a2a54a))
+
 ## [1.1.11](https://github.com/dword-design/docker-testing/compare/v1.1.10...v1.1.11) (2021-06-08)
 
 
