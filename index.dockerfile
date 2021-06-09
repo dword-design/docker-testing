@@ -1,4 +1,4 @@
-FROM alekzonder/puppeteer:latest
+FROM dworddesign/alekzonder-puppeteer:latest
 
 USER root
 
