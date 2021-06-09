@@ -1,3 +1,13 @@
+## [1.1.13](https://github.com/dword-design/docker-testing/compare/v1.1.12...v1.1.13) (2021-06-09)
+
+
+### Bug Fixes
+
+* foo ([06b8f38](https://github.com/dword-design/docker-testing/commit/06b8f38ad35dac6fa088dd01dd54963351810ef0))
+* foo ([ffab2f7](https://github.com/dword-design/docker-testing/commit/ffab2f71f53117a05e1fd00365eafadcc670aab7))
+* foo ([c0be787](https://github.com/dword-design/docker-testing/commit/c0be7879c06b6f28cfb332b584bf30fb48407fea))
+* go back to alekzonder/puppeteer ([9e6a9a3](https://github.com/dword-design/docker-testing/commit/9e6a9a3195670fc8675488562726e1bec927f76c))
+
 ## [1.1.12](https://github.com/dword-design/docker-testing/compare/v1.1.11...v1.1.12) (2021-06-08)
 
 
