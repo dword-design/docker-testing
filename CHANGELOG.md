@@ -1,3 +1,10 @@
+## [1.1.14](https://github.com/dword-design/docker-testing/compare/v1.1.13...v1.1.14) (2021-06-11)
+
+
+### Bug Fixes
+
+* xvfb support ([#29](https://github.com/dword-design/docker-testing/issues/29)) ([ccdaf15](https://github.com/dword-design/docker-testing/commit/ccdaf1573140c3cbb207b4417353e05bc4d8e627))
+
 ## [1.1.13](https://github.com/dword-design/docker-testing/compare/v1.1.12...v1.1.13) (2021-06-09)
 
 
