@@ -43,8 +43,13 @@ export default tester(
           const puppeteer = require('${packageName`@dword-design/puppeteer`}')
 
           const run = async () => {
-            const browser = await puppeteer.launch()
-            await browser.close()
+            try {
+              const browser = await puppeteer.launch({ headless: false })
+              await browser.close()
+            } catch (error) {
+              console.error(error)
+              process.exit(1)
+            }
           }
 
           run()
@@ -53,15 +58,20 @@ export default tester(
           'package.json': JSON.stringify({ name: 'foo' }),
         })
         await execa.command('yarn add @dword-design/puppeteer')
-        await execa('docker', [
-          'run',
-          '--rm',
-          '-v',
-          `${process.cwd()}:/app`,
-          'self',
-          'node',
-          '/app/index.js',
-        ])
+        await execa(
+          'docker',
+          [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            'self',
+            'bash',
+            '-c',
+            'xvfb-run node /app/index.js',
+          ],
+          { stdio: 'inherit' }
+        )
       }),
   },
   [testerPluginDocker()]
