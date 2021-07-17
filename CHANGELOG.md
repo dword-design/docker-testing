@@ -1,3 +1,10 @@
+## [1.1.17](https://github.com/dword-design/docker-testing/compare/v1.1.16...v1.1.17) (2021-07-17)
+
+
+### Bug Fixes
+
+* add emoji support ([60924d5](https://github.com/dword-design/docker-testing/commit/60924d5955bed3dbfb9524a725b98418327ce629))
+
 ## [1.1.16](https://github.com/dword-design/docker-testing/compare/v1.1.15...v1.1.16) (2021-07-06)
 
 
