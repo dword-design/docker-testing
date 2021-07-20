@@ -1,3 +1,10 @@
+## [1.1.18](https://github.com/dword-design/docker-testing/compare/v1.1.17...v1.1.18) (2021-07-20)
+
+
+### Bug Fixes
+
+* update config files ([6a0925c](https://github.com/dword-design/docker-testing/commit/6a0925c5c7557368aff2917527595ee6e0264c93))
+
 ## [1.1.17](https://github.com/dword-design/docker-testing/compare/v1.1.16...v1.1.17) (2021-07-17)
 
 
