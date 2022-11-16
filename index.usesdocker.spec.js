@@ -36,21 +36,18 @@ export default tester(
         `,
           'package.json': JSON.stringify({ name: 'foo' }),
         })
-        await execa.command('yarn add @dword-design/puppeteer express')
-        await execa(
-          'docker',
-          [
-            'run',
-            '--rm',
-            '-v',
-            `${process.cwd()}:/app`,
-            'self',
-            'bash',
-            '-c',
-            'xvfb-run node /app/index.js',
-          ],
-          { stdio: 'inherit' }
-        )
+        await execa('docker', [
+          'run',
+          '--rm',
+          '-v',
+          `${process.cwd()}:/app`,
+          '-v',
+          '/app/node_modules',
+          'self',
+          'bash',
+          '-c',
+          'yarn add @dword-design/puppeteer express && node index.js',
+        ])
         expect(await readFile('screenshot.png')).toMatchImageSnapshot(this)
       })
     },
@@ -83,11 +80,16 @@ export default tester(
         await outputFiles({
           'index.js': endent`
           const puppeteer = require('@dword-design/puppeteer')
+          const Xvfb = require('xvfb')
+
+          const xvfb = new Xvfb()
 
           const run = async () => {
             try {
+              xvfb.startSync()
               const browser = await puppeteer.launch({ headless: false })
               await browser.close()
+              xvfb.stopSync()
             } catch (error) {
               console.error(error)
               process.exit(1)
@@ -99,21 +101,18 @@ export default tester(
         `,
           'package.json': JSON.stringify({ name: 'foo' }),
         })
-        await execa.command('yarn add @dword-design/puppeteer')
-        await execa(
-          'docker',
-          [
-            'run',
-            '--rm',
-            '-v',
-            `${process.cwd()}:/app`,
-            'self',
-            'bash',
-            '-c',
-            'xvfb-run node /app/index.js',
-          ],
-          { stdio: 'inherit' }
-        )
+        await execa('docker', [
+          'run',
+          '--rm',
+          '-v',
+          `${process.cwd()}:/app`,
+          '-v',
+          '/app/node_modules',
+          'self',
+          'bash',
+          '-c',
+          'yarn add @dword-design/puppeteer xvfb && node /app/index.js',
+        ])
       }),
   },
   [testerPluginDocker()]
