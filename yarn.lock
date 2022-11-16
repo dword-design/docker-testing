@@ -1475,10 +1475,10 @@
   resolved "https://registry.yarnpkg.com/@dword-design/setup-test/-/setup-test-1.0.0.tgz#f4f7b2c963a4880cfa51556c10cd3bc58a303e8e"
   integrity sha512-ZF731+RQXFtUnwuraLyV387VJehNCP+vlCqmwU31SH59Sq0siz6iDuuEJBXpBRV3UVECfRsE+sND0Y/MmTym9w==
 
-"@dword-design/tester-plugin-docker@^2.0.0":
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-docker/-/tester-plugin-docker-2.0.10.tgz#1d99c7a60cf7e326e547380a6ffdf16e3f81f6d1"
-  integrity sha512-ugUFpZs5LjIhZ/GhrE98hfUhoXcypSWccAg4Yj5dsOB0Klj/g1qk+D9qY/e36VlIpqvfkw3Lh0f30XUPPKYWkw==
+"@dword-design/tester-plugin-docker@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-docker/-/tester-plugin-docker-3.0.0.tgz#8249e05d8d07082d0840ce4dd08155384a455e74"
+  integrity sha512-mu29nxd1pz2vCfTz/DlT8fsanoNxzx5fLKCA5QyGgW7LvLv+2aNRj3ZVYkUaIjCkLXzLYei2LlznDWfrkqEz6A==
   dependencies:
     "@dword-design/functions" "^4.0.0"
     execa "^5.0.0"
