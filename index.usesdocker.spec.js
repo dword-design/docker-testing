@@ -120,21 +120,18 @@ export default tester(
         })
 
         const userInfo = os.userInfo()
-        await execa(
-          'docker',
-          [
-            'run',
-            '--rm',
-            '-v',
-            `${process.cwd()}:/app`,
-            '-v',
-            '/app/node_modules',
-            'self',
-            'bash',
-            '-c',
-            `yarn add nuxt@^2 && node /app/index.js && chown -R ${userInfo.uid}:${userInfo.gid} /app`,
-          ]
-        )
+        await execa('docker', [
+          'run',
+          '--rm',
+          '-v',
+          `${process.cwd()}:/app`,
+          '-v',
+          '/app/node_modules',
+          'self',
+          'bash',
+          '-c',
+          `yarn add nuxt@^2 && node /app/index.js && chown -R ${userInfo.uid}:${userInfo.gid} /app`,
+        ])
       }),
   },
   [testerPluginDocker()]
