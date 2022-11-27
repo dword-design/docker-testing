@@ -1,3 +1,11 @@
+## [1.1.21](https://github.com/dword-design/docker-testing/compare/v1.1.20...v1.1.21) (2022-11-27)
+
+
+### Bug Fixes
+
+* webpack 4 ([#59](https://github.com/dword-design/docker-testing/issues/59)) ([bfe76b2](https://github.com/dword-design/docker-testing/commit/bfe76b2d9d32b09b8c08458963bd852173d1a2ac))
+* webpack 4 compatibility ([5041afb](https://github.com/dword-design/docker-testing/commit/5041afb184c1067c9b438bcf9b1bbecc57faab95))
+
 ## [1.1.20](https://github.com/dword-design/docker-testing/compare/v1.1.19...v1.1.20) (2022-11-27)
 
 
