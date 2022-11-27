@@ -1,16 +1,16 @@
 import { endent } from '@dword-design/functions'
 import tester from '@dword-design/tester'
 import testerPluginDocker from '@dword-design/tester-plugin-docker'
-import execa from 'execa'
-import { outputFile, readFile } from 'fs-extra'
+import { execa, execaCommand } from 'execa'
+import fs from 'fs-extra'
 import nodeVersionAlias from 'node-version-alias'
 import outputFiles from 'output-files'
-import semverMajor from 'semver/functions/major'
+import semver from 'semver'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default tester(
   {
-    dot: () => execa.command('docker run --rm self dot -V'),
+    dot: () => execaCommand('docker run --rm self dot -V'),
     emoji() {
       return withLocalTmpDir(async () => {
         await outputFiles({
@@ -48,12 +48,12 @@ export default tester(
           '-c',
           'yarn add @dword-design/puppeteer express && node index.js',
         ])
-        expect(await readFile('screenshot.png')).toMatchImageSnapshot(this)
+        expect(await fs.readFile('screenshot.png')).toMatchImageSnapshot(this)
       })
     },
     files: () =>
       withLocalTmpDir(async () => {
-        await outputFile('package.json', JSON.stringify({ name: 'foo' }))
+        await fs.outputFile('package.json', JSON.stringify({ name: 'foo' }))
 
         const output = await execa('docker', [
           'run',
@@ -67,14 +67,14 @@ export default tester(
         ])
         expect(output.stdout).toEqual(JSON.stringify({ name: 'foo' }))
       }),
-    git: () => execa.command('docker run --rm self git --version'),
+    git: () => execaCommand('docker run --rm self git --version'),
     'nodejs version': async () => {
-      const output = await execa.command('docker run --rm self node -v')
-      expect(output.stdout |> semverMajor).toEqual(
-        nodeVersionAlias('lts') |> await |> semverMajor
+      const output = await execaCommand('docker run --rm self node -v')
+      expect(output.stdout |> semver.major).toEqual(
+        nodeVersionAlias('lts') |> await |> semver.major
       )
     },
-    ps: () => execa.command('docker run --rm self ps'),
+    ps: () => execaCommand('docker run --rm self ps'),
     puppeteer: () =>
       withLocalTmpDir(async () => {
         await outputFiles({
