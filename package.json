@@ -24,9 +24,7 @@
     "@dword-design/tester-plugin-docker": "^3.0.0",
     "execa": "^6.1.0",
     "fs-extra": "^10.0.0",
-    "node-version-alias": "^3.4.0",
     "output-files": "^2.0.0",
-    "semver": "^7.3.5",
     "with-local-tmp-dir": "^4.0.0"
   },
   "engines": {
