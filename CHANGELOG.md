@@ -1,3 +1,10 @@
+## [1.1.20](https://github.com/dword-design/docker-testing/compare/v1.1.19...v1.1.20) (2022-11-27)
+
+
+### Bug Fixes
+
+* upgrades ([#58](https://github.com/dword-design/docker-testing/issues/58)) ([792d0e7](https://github.com/dword-design/docker-testing/commit/792d0e774284f54670b4fb79816f12ceccf2cd6e))
+
 ## [1.1.19](https://github.com/dword-design/docker-testing/compare/v1.1.18...v1.1.19) (2022-11-16)
 
 
