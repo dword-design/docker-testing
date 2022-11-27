@@ -3,9 +3,8 @@ import tester from '@dword-design/tester'
 import testerPluginDocker from '@dword-design/tester-plugin-docker'
 import { execa, execaCommand } from 'execa'
 import fs from 'fs-extra'
-import nodeVersionAlias from 'node-version-alias'
+import os from 'os'
 import outputFiles from 'output-files'
-import semver from 'semver'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default tester(
@@ -68,12 +67,6 @@ export default tester(
         expect(output.stdout).toEqual(JSON.stringify({ name: 'foo' }))
       }),
     git: () => execaCommand('docker run --rm self git --version'),
-    'nodejs version': async () => {
-      const output = await execaCommand('docker run --rm self node -v')
-      expect(output.stdout |> semver.major).toEqual(
-        nodeVersionAlias('lts') |> await |> semver.major
-      )
-    },
     ps: () => execaCommand('docker run --rm self ps'),
     puppeteer: () =>
       withLocalTmpDir(async () => {
@@ -112,6 +105,32 @@ export default tester(
           'bash',
           '-c',
           'yarn add @dword-design/puppeteer xvfb && node /app/index.js',
+        ])
+      }),
+    'webpack 4': () =>
+      withLocalTmpDir(async () => {
+        await outputFiles({
+          'index.js': endent`
+          import { Builder, Nuxt } from 'nuxt'
+
+          const nuxt = new Nuxt({ dev: false })
+          await new Builder(nuxt).build()
+      `,
+          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+        })
+
+        const userInfo = os.userInfo()
+        await execa('docker', [
+          'run',
+          '--rm',
+          '-v',
+          `${process.cwd()}:/app`,
+          '-v',
+          '/app/node_modules',
+          'self',
+          'bash',
+          '-c',
+          `yarn add nuxt@^2 && node /app/index.js && chown -R ${userInfo.uid}:${userInfo.gid} /app`,
         ])
       }),
   },
