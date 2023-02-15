@@ -33,7 +33,7 @@ export default tester(
           run()
 
         `,
-          'package.json': JSON.stringify({ name: 'foo' }),
+          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         })
         await execa('docker', [
           'run',
@@ -52,7 +52,7 @@ export default tester(
     },
     files: () =>
       withLocalTmpDir(async () => {
-        await fs.outputFile('package.json', JSON.stringify({ name: 'foo' }))
+        await fs.outputFile('package.json', JSON.stringify({ name: 'foo', type: 'module' }))
 
         const output = await execa('docker', [
           'run',
@@ -92,7 +92,7 @@ export default tester(
           run()
 
         `,
-          'package.json': JSON.stringify({ name: 'foo' }),
+          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         })
         await execa('docker', [
           'run',
