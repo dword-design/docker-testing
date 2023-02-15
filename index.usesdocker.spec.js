@@ -14,8 +14,8 @@ export default tester(
       return withLocalTmpDir(async () => {
         await outputFiles({
           'index.js': endent`
-          const express = require('express')
-          const puppeteer = require('@dword-design/puppeteer')
+          import express from 'express'
+          import puppeteer from '@dword-design/puppeteer'
 
           const run = async () => {
             const server = express()
@@ -72,8 +72,8 @@ export default tester(
       withLocalTmpDir(async () => {
         await outputFiles({
           'index.js': endent`
-          const puppeteer = require('@dword-design/puppeteer')
-          const Xvfb = require('xvfb')
+          import puppeteer from '@dword-design/puppeteer'
+          import Xvfb from 'xvfb'
 
           const xvfb = new Xvfb()
 
