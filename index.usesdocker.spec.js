@@ -52,7 +52,10 @@ export default tester(
     },
     files: () =>
       withLocalTmpDir(async () => {
-        await fs.outputFile('package.json', JSON.stringify({ name: 'foo', type: 'module' }))
+        await fs.outputFile(
+          'package.json',
+          JSON.stringify({ name: 'foo', type: 'module' })
+        )
 
         const output = await execa('docker', [
           'run',
@@ -64,7 +67,9 @@ export default tester(
           '-c',
           'cat package.json',
         ])
-        expect(output.stdout).toEqual(JSON.stringify({ name: 'foo' }))
+        expect(output.stdout).toEqual(
+          JSON.stringify({ name: 'foo', type: 'module' })
+        )
       }),
     git: () => execaCommand('docker run --rm self git --version'),
     ps: () => execaCommand('docker run --rm self ps'),
