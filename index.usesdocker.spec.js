@@ -14,25 +14,25 @@ export default tester(
       return withLocalTmpDir(async () => {
         await outputFiles({
           'index.js': endent`
-          import express from 'express'
-          import puppeteer from '@dword-design/puppeteer'
+            import express from 'express'
+            import puppeteer from '@dword-design/puppeteer'
 
-          const run = async () => {
-            const server = express()
-              .get('/', (req, res) => res.send('<span class="emoji">🙌</span>'))
-              .listen(3000)
-            const browser = await puppeteer.launch()
-            const page = await browser.newPage()
-            await page.goto('http://localhost:3000')
-            const emoji = await page.waitForSelector('.emoji')
-            await emoji.screenshot({ path: 'screenshot.png' })
-            await browser.close()
-            await server.close()
-          }
+            const run = async () => {
+              const server = express()
+                .get('/', (req, res) => res.send('<span class="emoji">🙌</span>'))
+                .listen(3000)
+              const browser = await puppeteer.launch()
+              const page = await browser.newPage()
+              await page.goto('http://localhost:3000')
+              const emoji = await page.waitForSelector('.emoji')
+              await emoji.screenshot({ path: 'screenshot.png' })
+              await browser.close()
+              await server.close()
+            }
 
-          run()
+            run()
 
-        `,
+          `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         })
         await execa('docker', [
@@ -54,7 +54,7 @@ export default tester(
       withLocalTmpDir(async () => {
         await fs.outputFile(
           'package.json',
-          JSON.stringify({ name: 'foo', type: 'module' })
+          JSON.stringify({ name: 'foo', type: 'module' }),
         )
 
         const output = await execa('docker', [
@@ -68,7 +68,7 @@ export default tester(
           'cat package.json',
         ])
         expect(output.stdout).toEqual(
-          JSON.stringify({ name: 'foo', type: 'module' })
+          JSON.stringify({ name: 'foo', type: 'module' }),
         )
       }),
     git: () => execaCommand('docker run --rm self git --version'),
@@ -77,26 +77,26 @@ export default tester(
       withLocalTmpDir(async () => {
         await outputFiles({
           'index.js': endent`
-          import puppeteer from '@dword-design/puppeteer'
-          import Xvfb from 'xvfb'
+            import puppeteer from '@dword-design/puppeteer'
+            import Xvfb from 'xvfb'
 
-          const xvfb = new Xvfb()
+            const xvfb = new Xvfb()
 
-          const run = async () => {
-            try {
-              xvfb.startSync()
-              const browser = await puppeteer.launch({ headless: false })
-              await browser.close()
-              xvfb.stopSync()
-            } catch (error) {
-              console.error(error)
-              process.exit(1)
+            const run = async () => {
+              try {
+                xvfb.startSync()
+                const browser = await puppeteer.launch({ headless: false })
+                await browser.close()
+                xvfb.stopSync()
+              } catch (error) {
+                console.error(error)
+                process.exit(1)
+              }
             }
-          }
 
-          run()
+            run()
 
-        `,
+          `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         })
         await execa('docker', [
@@ -116,11 +116,11 @@ export default tester(
       withLocalTmpDir(async () => {
         await outputFiles({
           'index.js': endent`
-          import { Builder, Nuxt } from 'nuxt'
+            import { Builder, Nuxt } from 'nuxt'
 
-          const nuxt = new Nuxt({ dev: false })
-          await new Builder(nuxt).build()
-      `,
+            const nuxt = new Nuxt({ dev: false })
+            await new Builder(nuxt).build()
+          `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         })
 
@@ -139,5 +139,5 @@ export default tester(
         ])
       }),
   },
-  [testerPluginDocker()]
+  [testerPluginDocker()],
 )
