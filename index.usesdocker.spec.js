@@ -5,6 +5,7 @@ import { execa, execaCommand } from 'execa'
 import fs from 'fs-extra'
 import os from 'os'
 import outputFiles from 'output-files'
+import { v4 as uuid } from 'uuid'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default tester(
@@ -111,6 +112,52 @@ export default tester(
           '-c',
           'yarn add @dword-design/puppeteer xvfb && node /app/index.js',
         ])
+      }),
+    'puppeteer multiple runs': () =>
+      withLocalTmpDir(async () => {
+        await outputFiles({
+          'index.js': endent`
+            import puppeteer from '@dword-design/puppeteer'
+
+            const run = async () => {
+              const browser = await puppeteer.launch()
+              await browser.close()
+            }
+
+            run()
+          `,
+          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+        })
+
+        const volumeName = uuid()
+        await execa('docker', [
+          'run',
+          '--rm',
+          '-v',
+          `${process.cwd()}:/app`,
+          '-v',
+          `${volumeName}:/app/node_modules`,
+          'self',
+          'bash',
+          '-c',
+          'yarn add @dword-design/puppeteer && node /app/index.js',
+        ])
+        try {
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            `${volumeName}:/app/node_modules`,
+            'self',
+            'bash',
+            '-c',
+            'yarn --frozen-lockfile && node /app/index.js',
+          ])
+        } finally {
+          await execaCommand(`docker volume rm ${volumeName}`)
+        }
       }),
     'webpack 4': () =>
       withLocalTmpDir(async () => {
