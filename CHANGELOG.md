@@ -1,3 +1,10 @@
+## [1.1.23](https://github.com/dword-design/docker-testing/compare/v1.1.22...v1.1.23) (2023-03-12)
+
+
+### Bug Fixes
+
+* fix puppeteer cache ([#73](https://github.com/dword-design/docker-testing/issues/73)) ([11ffa26](https://github.com/dword-design/docker-testing/commit/11ffa260afc2bd13a919b6a622e13aa2593a2864))
+
 ## [1.1.22](https://github.com/dword-design/docker-testing/compare/v1.1.21...v1.1.22) (2023-02-15)
 
 
