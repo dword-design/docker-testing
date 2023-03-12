@@ -17,6 +17,8 @@ RUN apt-get update \
       --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
+ENV PUPPETEER_CACHE_DIR=/app/node_modules/.cache/puppeteer
+
 ######################################################################
 
 RUN apt-get update
