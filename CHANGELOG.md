@@ -1,3 +1,10 @@
+## [1.1.24](https://github.com/dword-design/docker-testing/compare/v1.1.23...v1.1.24) (2023-03-15)
+
+
+### Bug Fixes
+
+* update dependency execa to v7.1.1 ([c5eca47](https://github.com/dword-design/docker-testing/commit/c5eca47e767359717d8362eb9fae65e615ff0369))
+
 ## [1.1.23](https://github.com/dword-design/docker-testing/compare/v1.1.22...v1.1.23) (2023-03-12)
 
 
