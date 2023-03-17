@@ -1,3 +1,11 @@
+## [1.1.26](https://github.com/dword-design/docker-testing/compare/v1.1.25...v1.1.26) (2023-03-17)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base-config-docker to v1.1.22 ([1b57b93](https://github.com/dword-design/docker-testing/commit/1b57b9319f9c124850484fde13a13fca73c1d3d2))
+* update dependency output-files to v2.0.13 ([9908fb2](https://github.com/dword-design/docker-testing/commit/9908fb25659c152cd659b747f2308f48c98975ba))
+
 ## [1.1.25](https://github.com/dword-design/docker-testing/compare/v1.1.24...v1.1.25) (2023-03-16)
 
 
