@@ -1,3 +1,10 @@
+## [1.1.28](https://github.com/dword-design/docker-testing/compare/v1.1.27...v1.1.28) (2023-03-18)
+
+
+### Bug Fixes
+
+* update dependency output-files to v2.0.15 ([a2833c3](https://github.com/dword-design/docker-testing/commit/a2833c373793f704fc9a23f1472e0205fe6633ef))
+
 ## [1.1.27](https://github.com/dword-design/docker-testing/compare/v1.1.26...v1.1.27) (2023-03-18)
 
 
