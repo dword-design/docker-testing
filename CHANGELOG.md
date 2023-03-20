@@ -1,3 +1,10 @@
+## [1.1.32](https://github.com/dword-design/docker-testing/compare/v1.1.31...v1.1.32) (2023-03-20)
+
+
+### Bug Fixes
+
+* update dependency fs-extra to v11.1.1 ([9fb3d93](https://github.com/dword-design/docker-testing/commit/9fb3d93da704f2054f92313826db5936db1a20c2))
+
 ## [1.1.31](https://github.com/dword-design/docker-testing/compare/v1.1.30...v1.1.31) (2023-03-19)
 
 
