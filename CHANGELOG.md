@@ -1,3 +1,10 @@
+## [1.1.35](https://github.com/dword-design/docker-testing/compare/v1.1.34...v1.1.35) (2023-04-09)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4.1.7 ([f095a3f](https://github.com/dword-design/docker-testing/commit/f095a3fb80f46ee2411275b8b3a704bca97fb975))
+
 ## [1.1.34](https://github.com/dword-design/docker-testing/compare/v1.1.33...v1.1.34) (2023-04-09)
 
 
