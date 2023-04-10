@@ -1,3 +1,10 @@
+## [1.1.37](https://github.com/dword-design/docker-testing/compare/v1.1.36...v1.1.37) (2023-04-10)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/tester to v2.0.16 ([1ae3203](https://github.com/dword-design/docker-testing/commit/1ae320353fe4a882c2c6e58207e2346ae5cdf5e8))
+
 ## [1.1.36](https://github.com/dword-design/docker-testing/compare/v1.1.35...v1.1.36) (2023-04-10)
 
 
