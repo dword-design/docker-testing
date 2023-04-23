@@ -78,27 +78,22 @@ export default tester(
       withLocalTmpDir(async () => {
         await fs.outputFile('foo.txt', '')
         try {
-          await execa(
-            'docker',
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app:delegated`,
+            'self',
+            'bash',
+            '-c',
             [
-              'run',
-              '--rm',
-              '-v',
-              `${process.cwd()}:/app:delegated`,
-              'self',
-              'bash',
-              '-c',
-              [
-                'touch foo.txt',
-                'ls -la',
-                'git init',
-                'git add .',
-                'git config user.email foo@bar.de',
-                'git config user.name foo',
-                'git commit -m foo',
-              ].join(' && '),
-            ],
-          )
+              'git init',
+              'git add .',
+              'git config user.email foo@bar.de',
+              'git config user.name foo',
+              'git commit -m foo',
+            ].join(' && '),
+          ])
         } finally {
           // fix permissions
           await execa('docker', [
