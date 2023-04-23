@@ -1,3 +1,10 @@
+## [1.1.44](https://github.com/dword-design/docker-testing/compare/v1.1.43...v1.1.44) (2023-04-23)
+
+
+### Bug Fixes
+
+* fix git ([#103](https://github.com/dword-design/docker-testing/issues/103)) ([aea54cd](https://github.com/dword-design/docker-testing/commit/aea54cd0ffc65de4e4b1506109c7964f43b01cb0))
+
 ## [1.1.43](https://github.com/dword-design/docker-testing/compare/v1.1.42...v1.1.43) (2023-04-12)
 
 
