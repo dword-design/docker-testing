@@ -8,6 +8,8 @@ import outputFiles from 'output-files'
 import { v4 as uuid } from 'uuid'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
+const userInfo = os.userInfo()
+
 export default tester(
   {
     dot: () => execaCommand('docker run --rm self dot -V'),
@@ -72,7 +74,45 @@ export default tester(
           JSON.stringify({ name: 'foo', type: 'module' }),
         )
       }),
-    git: () => execaCommand('docker run --rm self git --version'),
+    git: () =>
+      withLocalTmpDir(async () => {
+        await fs.outputFile('foo.txt', '')
+        try {
+          await execa(
+            'docker',
+            [
+              'run',
+              '--rm',
+              '-v',
+              `${process.cwd()}:/app:delegated`,
+              'self',
+              'bash',
+              '-c',
+              [
+                'touch foo.txt',
+                'ls -la',
+                'git init',
+                'git add .',
+                'git config user.email foo@bar.de',
+                'git config user.name foo',
+                'git commit -m foo',
+              ].join(' && '),
+            ],
+          )
+        } finally {
+          // fix permissions
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            'self',
+            'bash',
+            '-c',
+            `chown -R ${userInfo.uid}:${userInfo.gid} /app`,
+          ])
+        }
+      }),
     ps: () => execaCommand('docker run --rm self ps'),
     puppeteer: () =>
       withLocalTmpDir(async () => {
@@ -170,8 +210,6 @@ export default tester(
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         })
-
-        const userInfo = os.userInfo()
         await execa('docker', [
           'run',
           '--rm',

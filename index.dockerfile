@@ -1,9 +1,9 @@
+FROM node:16-slim
+
 ######################################################################
 
 # Puppeteer
 # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker
-
-FROM node:16-slim
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
 # Note: this installs the necessary libs to make the bundled version of Chromium that Puppeteer
@@ -38,5 +38,17 @@ RUN apt-get install -y procps
 # Emojis #############################################################
 
 RUN apt-get install -y fonts-noto-color-emoji
+
+## Git ###############################################################
+
+# Otherwise we get this error due to permission conflicts between host and container:
+#
+# fatal: detected dubious ownership in repository at '/app'
+# To add an exception for this directory, call:
+# 
+#   git config --global --add safe.directory /app
+RUN git config --global --add safe.directory /app
+
+######################################################################
 
 WORKDIR /app
