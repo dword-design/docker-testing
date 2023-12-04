@@ -1530,15 +1530,15 @@
   resolved "https://registry.yarnpkg.com/@dword-design/suppress-babel-register-esm-warning/-/suppress-babel-register-esm-warning-1.1.10.tgz#1fc68ca173a513a9f46642740e47cc3847cf391f"
   integrity sha512-VkXvIeTTutLLGr05RQEcuAs+ePlJa3yN2xuUuA3OtfXywdKlxA9r5xMFzGnHVc/y8T/95Z2eOEBpCn2QkChokg==
 
-"@dword-design/tester-plugin-docker@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-docker/-/tester-plugin-docker-3.0.0.tgz#8249e05d8d07082d0840ce4dd08155384a455e74"
-  integrity sha512-mu29nxd1pz2vCfTz/DlT8fsanoNxzx5fLKCA5QyGgW7LvLv+2aNRj3ZVYkUaIjCkLXzLYei2LlznDWfrkqEz6A==
+"@dword-design/tester-plugin-docker@^4.0.0":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-docker/-/tester-plugin-docker-4.0.9.tgz#672784b552589262cdd8c94bb7a0a31b810d1619"
+  integrity sha512-xV/+h81LqTfr+rJd+mIpx7jMCVkP6Lq7N571SxIWSVJcQ8bYPKhntccYe4XcL/R+HtB3Bdp3LNumTNufOfutKg==
   dependencies:
     "@dword-design/functions" "^4.0.0"
-    execa "^5.0.0"
-    find-up "^5.0.0"
-    fs-extra "^10.0.0"
+    execa "^7.1.1"
+    find-up "^6.3.0"
+    fs-extra "^11.1.1"
 
 "@dword-design/tester@^2.0.0":
   version "2.0.19"
@@ -5760,7 +5760,7 @@ fs-extra@^10.0.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
-fs-extra@^11.0.0, fs-extra@^11.1.0:
+fs-extra@^11.0.0, fs-extra@^11.1.0, fs-extra@^11.1.1:
   version "11.2.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.2.0.tgz#e70e17dfad64232287d01929399e0ea7c86b0e5b"
   integrity sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==
@@ -7941,14 +7941,7 @@ load-json-file@^4.0.0:
     pify "^3.0.0"
     strip-bom "^3.0.0"
 
-load-pkg@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/load-pkg/-/load-pkg-4.0.0.tgz#f80a29aec2f6d02aadde714099fda4eea1b611f1"
-  integrity sha512-xS6uYdbUzHbwO5bExhtM8RsU6Z/fVEfZE4uZpWQOwVygLSUfXz7J97nGzJfZ+FFCZc0Weabn/wA3y1k9Q7Y4mw==
-  dependencies:
-    find-pkg "^2.0.0"
-
-"load-pkg@npm:@dword-design/load-pkg":
+load-pkg@^4.0.0, "load-pkg@npm:@dword-design/load-pkg":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@dword-design/load-pkg/-/load-pkg-4.0.0.tgz#201f76adeb44c64ed22d789591ab740573fe0a5b"
   integrity sha512-lZxKRusgIqSg2y4jLzZzMPWyhrGPGke3YYmAxj4SoJeUGV4CmvYyhJkJnfA7Yaov7GMXZi64nlhx8D809VDazg==
