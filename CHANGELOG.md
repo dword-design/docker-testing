@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/dword-design/docker-testing/compare/v1.1.44...v2.0.0) (2024-01-09)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v11 ([#150](https://github.com/dword-design/docker-testing/issues/150)) ([8d0ae9b](https://github.com/dword-design/docker-testing/commit/8d0ae9b5fd74521289fea66b7ffb36884e5bebce))
+
+
+### BREAKING CHANGES
+
+* node.js >= 18
+
 ## [1.1.44](https://github.com/dword-design/docker-testing/compare/v1.1.43...v1.1.44) (2023-04-23)
 
 
