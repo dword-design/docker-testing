@@ -20,21 +20,16 @@ export default tester(
             import express from 'express'
             import puppeteer from '@dword-design/puppeteer'
 
-            const run = async () => {
-              const server = express()
-                .get('/', (req, res) => res.send('<span class="emoji">🙌</span>'))
-                .listen(3000)
-              const browser = await puppeteer.launch()
-              const page = await browser.newPage()
-              await page.goto('http://localhost:3000')
-              const emoji = await page.waitForSelector('.emoji')
-              await emoji.screenshot({ path: 'screenshot.png' })
-              await browser.close()
-              await server.close()
-            }
-
-            run()
-
+            const server = express()
+              .get('/', (req, res) => res.send('<span class="emoji">🙌</span>'))
+              .listen(3000)
+            const browser = await puppeteer.launch()
+            const page = await browser.newPage()
+            await page.goto('http://localhost:3000')
+            const emoji = await page.waitForSelector('.emoji')
+            await emoji.screenshot({ path: 'screenshot.png' })
+            await browser.close()
+            await server.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         })
@@ -114,24 +109,9 @@ export default tester(
         await outputFiles({
           'index.js': endent`
             import puppeteer from '@dword-design/puppeteer'
-            import Xvfb from 'xvfb'
 
-            const xvfb = new Xvfb()
-
-            const run = async () => {
-              try {
-                xvfb.startSync()
-                const browser = await puppeteer.launch({ headless: false })
-                await browser.close()
-                xvfb.stopSync()
-              } catch (error) {
-                console.error(error)
-                process.exit(1)
-              }
-            }
-
-            run()
-
+            const browser = await puppeteer.launch()
+            await browser.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         })
@@ -145,7 +125,7 @@ export default tester(
           'self',
           'bash',
           '-c',
-          'yarn add @dword-design/puppeteer xvfb && node /app/index.js',
+          'yarn add @dword-design/puppeteer && node /app/index.js',
         ])
       }),
     'puppeteer multiple runs': () =>
@@ -154,12 +134,8 @@ export default tester(
           'index.js': endent`
             import puppeteer from '@dword-design/puppeteer'
 
-            const run = async () => {
-              const browser = await puppeteer.launch()
-              await browser.close()
-            }
-
-            run()
+            const browser = await puppeteer.launch()
+            await browser.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         })

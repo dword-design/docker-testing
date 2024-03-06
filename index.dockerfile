@@ -23,10 +23,6 @@ ENV PUPPETEER_CACHE_DIR=/app/node_modules/.cache/puppeteer
 
 RUN apt-get update
 
-# Headful Puppeteer ##################################################
-
-RUN apt-get install -y xvfb
-
 # dot ################################################################
 
 RUN apt-get install -y git graphviz
