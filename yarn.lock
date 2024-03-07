@@ -1244,12 +1244,11 @@
     jiti "^1.18.2"
     load-pkg "npm:@dword-design/load-pkg"
 
-"@dword-design/base-config-docker@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@dword-design/base-config-docker/-/base-config-docker-2.0.2.tgz#cab81a12d8b40d9ba5e1bcb86186eba4d9088287"
-  integrity sha512-edmjH68gbfyQieZqasqB4HCXSkjuaD2bpnJN81Jvr6AEMylEkF2qBSeQ/etSPvzuQTQKHHftmGzzgVth1kcocQ==
+"@dword-design/base-config-docker@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/base-config-docker/-/base-config-docker-3.0.0.tgz#57310734a762c8845b88ce03691b0da9bfff249c"
+  integrity sha512-dVXGONrtHjThRR+TD9kYdT7P/Md2abZkn4EoV+NgVMDz7MD8+wvqiGKVHWpyDZErSdeDJ7DhP8d6hN/ymbVTDw==
   dependencies:
-    "@semantic-release/exec" "^6.0.3"
     depcheck-package-name "^3.0.0"
     load-pkg "^4.0.0"
     parse-packagejson-name "^1.0.1"
@@ -2049,18 +2048,6 @@
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-4.0.0.tgz#692810288239637f74396976a9340fbc0aa9f6f9"
   integrity sha512-mgdxrHTLOjOddRVYIYDo0fR3/v61GNN1YGkfbrjuIKg/uMgCd+Qzo3UAXJ+woLQQpos4pl5Esuw5A7AoNlzjUQ==
-
-"@semantic-release/exec@^6.0.3":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@semantic-release/exec/-/exec-6.0.3.tgz#d212fdf19633bdfb553de6cb6c7f8781933224db"
-  integrity sha512-bxAq8vLOw76aV89vxxICecEa8jfaWwYITw6X74zzlO0mc/Bgieqx9kBRz9z96pHectiTAtsCwsQcUyLYWnp3VQ==
-  dependencies:
-    "@semantic-release/error" "^3.0.0"
-    aggregate-error "^3.0.0"
-    debug "^4.0.0"
-    execa "^5.0.0"
-    lodash "^4.17.4"
-    parse-json "^5.0.0"
 
 "@semantic-release/git@^10.0.1":
   version "10.0.1"

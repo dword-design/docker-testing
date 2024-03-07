@@ -10,12 +10,6 @@
       }
     ],
     [
-      "@semantic-release/exec",
-      {
-        "prepareCmd": "docker build --file index.dockerfile --tag dworddesign/testing ."
-      }
-    ],
-    [
       "semantic-release-docker",
       {
         "name": "dworddesign/testing"

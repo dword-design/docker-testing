@@ -35,6 +35,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         name: Push changed files
         run: yarn dw-ci push-changed-files
+      - if: github.ref == 'refs/heads/master'
+        run: docker build --file index.dockerfile --tag dworddesign/testing .
       - env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
