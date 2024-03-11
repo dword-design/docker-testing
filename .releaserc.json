@@ -9,17 +9,17 @@
         "npmPublish": false
       }
     ],
-    [
-      "semantic-release-docker",
-      {
-        "name": "dworddesign/testing"
-      }
-    ],
     "@semantic-release/github",
     [
       "@semantic-release/git",
       {
         "message": "chore: ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    [
+      "semantic-release-docker",
+      {
+        "name": "dworddesign/testing"
       }
     ]
   ]
