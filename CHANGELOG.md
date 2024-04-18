@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/dword-design/docker-testing/compare/v2.0.2...v2.1.0) (2024-04-18)
+
+
+### Features
+
+* playwright ([a5e4c62](https://github.com/dword-design/docker-testing/commit/a5e4c62a1117eb5f4f1b32682aadd835cdd5b4e5))
+
 ## [2.0.2](https://github.com/dword-design/docker-testing/compare/v2.0.1...v2.0.2) (2024-03-07)
 
 
