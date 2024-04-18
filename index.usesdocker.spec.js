@@ -103,6 +103,72 @@ export default tester(
           ])
         }
       }),
+    playwright: () =>
+      withLocalTmpDir(async () => {
+        await outputFiles({
+          'index.js': endent`
+            import { chromium } from 'playwright'
+
+            const browser = await chromium.launch()
+            await browser.close()
+          `,
+          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+        })
+        await execa('docker', [
+          'run',
+          '--rm',
+          '-v',
+          `${process.cwd()}:/app`,
+          '-v',
+          '/app/node_modules',
+          'self',
+          'bash',
+          '-c',
+          'yarn add playwright playwright-chromium && node /app/index.js',
+        ])
+      }),
+    'playwright multiple runs': () =>
+      withLocalTmpDir(async () => {
+        await outputFiles({
+          'index.js': endent`
+            import { chromium } from 'playwright'
+
+            const browser = await chromium.launch()
+            await browser.close()
+          `,
+          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+        })
+
+        const volumeName = uuid()
+        await execa('docker', [
+          'run',
+          '--rm',
+          '-v',
+          `${process.cwd()}:/app`,
+          '-v',
+          `${volumeName}:/app/node_modules`,
+          'self',
+          'bash',
+          '-c',
+          'yarn add playwright playwright-chromium && node /app/index.js',
+        ])
+        try {
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            `${volumeName}:/app/node_modules`,
+            'self',
+            'bash',
+            '-c',
+            'yarn --frozen-lockfile && node /app/index.js',
+          ])
+        } finally {
+          await execaCommand(`docker volume rm ${volumeName}`)
+        }
+      }),
     ps: () => execaCommand('docker run --rm self ps'),
     puppeteer: () =>
       withLocalTmpDir(async () => {

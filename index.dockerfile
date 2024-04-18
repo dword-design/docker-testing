@@ -23,6 +23,10 @@ ENV PUPPETEER_CACHE_DIR=/app/node_modules/.cache/puppeteer
 
 RUN apt-get update
 
+# Playwright #########################################################
+
+ENV PLAYWRIGHT_BROWSERS_PATH=0
+
 # dot ################################################################
 
 RUN apt-get install -y git graphviz
