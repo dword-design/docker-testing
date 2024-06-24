@@ -1,14 +1,14 @@
-import { endent } from '@dword-design/functions'
-import tester from '@dword-design/tester'
-import testerPluginDocker from '@dword-design/tester-plugin-docker'
-import { execa, execaCommand } from 'execa'
-import fs from 'fs-extra'
-import os from 'os'
-import outputFiles from 'output-files'
-import { v4 as uuid } from 'uuid'
-import withLocalTmpDir from 'with-local-tmp-dir'
+import { endent } from '@dword-design/functions';
+import tester from '@dword-design/tester';
+import testerPluginDocker from '@dword-design/tester-plugin-docker';
+import { execa, execaCommand } from 'execa';
+import fs from 'fs-extra';
+import os from 'os';
+import outputFiles from 'output-files';
+import { v4 as uuid } from 'uuid';
+import withLocalTmpDir from 'with-local-tmp-dir';
 
-const userInfo = os.userInfo()
+const userInfo = os.userInfo();
 
 export default tester(
   {
@@ -32,7 +32,8 @@ export default tester(
             await server.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-        })
+        });
+
         await execa('docker', [
           'run',
           '--rm',
@@ -44,16 +45,17 @@ export default tester(
           'bash',
           '-c',
           'yarn add @dword-design/puppeteer express && node index.js',
-        ])
-        expect(await fs.readFile('screenshot.png')).toMatchImageSnapshot(this)
-      })
+        ]);
+
+        expect(await fs.readFile('screenshot.png')).toMatchImageSnapshot(this);
+      });
     },
     files: () =>
       withLocalTmpDir(async () => {
         await fs.outputFile(
           'package.json',
           JSON.stringify({ name: 'foo', type: 'module' }),
-        )
+        );
 
         const output = await execa('docker', [
           'run',
@@ -64,14 +66,16 @@ export default tester(
           'bash',
           '-c',
           'cat package.json',
-        ])
+        ]);
+
         expect(output.stdout).toEqual(
           JSON.stringify({ name: 'foo', type: 'module' }),
-        )
+        );
       }),
     git: () =>
       withLocalTmpDir(async () => {
-        await fs.outputFile('foo.txt', '')
+        await fs.outputFile('foo.txt', '');
+
         try {
           await execa('docker', [
             'run',
@@ -88,7 +92,7 @@ export default tester(
               'git config user.name foo',
               'git commit -m foo',
             ].join(' && '),
-          ])
+          ]);
         } finally {
           // fix permissions
           await execa('docker', [
@@ -100,7 +104,7 @@ export default tester(
             'bash',
             '-c',
             `chown -R ${userInfo.uid}:${userInfo.gid} /app`,
-          ])
+          ]);
         }
       }),
     playwright: () =>
@@ -113,7 +117,8 @@ export default tester(
             await browser.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-        })
+        });
+
         await execa('docker', [
           'run',
           '--rm',
@@ -125,7 +130,7 @@ export default tester(
           'bash',
           '-c',
           'yarn add playwright playwright-chromium && node /app/index.js',
-        ])
+        ]);
       }),
     'playwright multiple runs': () =>
       withLocalTmpDir(async () => {
@@ -137,9 +142,10 @@ export default tester(
             await browser.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-        })
+        });
 
-        const volumeName = uuid()
+        const volumeName = uuid();
+
         await execa('docker', [
           'run',
           '--rm',
@@ -151,7 +157,8 @@ export default tester(
           'bash',
           '-c',
           'yarn add playwright playwright-chromium && node /app/index.js',
-        ])
+        ]);
+
         try {
           await execa('docker', [
             'run',
@@ -164,9 +171,9 @@ export default tester(
             'bash',
             '-c',
             'yarn --frozen-lockfile && node /app/index.js',
-          ])
+          ]);
         } finally {
-          await execaCommand(`docker volume rm ${volumeName}`)
+          await execaCommand(`docker volume rm ${volumeName}`);
         }
       }),
     ps: () => execaCommand('docker run --rm self ps'),
@@ -180,7 +187,8 @@ export default tester(
             await browser.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-        })
+        });
+
         await execa('docker', [
           'run',
           '--rm',
@@ -192,7 +200,7 @@ export default tester(
           'bash',
           '-c',
           'yarn add @dword-design/puppeteer && node /app/index.js',
-        ])
+        ]);
       }),
     'puppeteer multiple runs': () =>
       withLocalTmpDir(async () => {
@@ -204,9 +212,10 @@ export default tester(
             await browser.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-        })
+        });
 
-        const volumeName = uuid()
+        const volumeName = uuid();
+
         await execa('docker', [
           'run',
           '--rm',
@@ -218,7 +227,8 @@ export default tester(
           'bash',
           '-c',
           'yarn add @dword-design/puppeteer && node /app/index.js',
-        ])
+        ]);
+
         try {
           await execa('docker', [
             'run',
@@ -231,9 +241,9 @@ export default tester(
             'bash',
             '-c',
             'yarn --frozen-lockfile && node /app/index.js',
-          ])
+          ]);
         } finally {
-          await execaCommand(`docker volume rm ${volumeName}`)
+          await execaCommand(`docker volume rm ${volumeName}`);
         }
       }),
     'webpack 4': () =>
@@ -246,7 +256,8 @@ export default tester(
             await new Builder(nuxt).build()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-        })
+        });
+
         await execa('docker', [
           'run',
           '--rm',
@@ -258,8 +269,8 @@ export default tester(
           'bash',
           '-c',
           `yarn add nuxt@^2 && node /app/index.js && chown -R ${userInfo.uid}:${userInfo.gid} /app`,
-        ])
+        ]);
       }),
   },
   [testerPluginDocker()],
-)
+);
