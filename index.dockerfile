@@ -1,8 +1,11 @@
 FROM node:20-slim
 
-######################################################################
+# Corepack ###########################################################
 
-# Puppeteer
+RUN corepack enable
+
+# Puppeteer ##########################################################
+
 # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker
 
 # Install latest chrome dev package and fonts to support major charsets (Chinese, Japanese, Arabic, Hebrew, Thai and a few others)
@@ -19,7 +22,7 @@ RUN apt-get update \
 
 ENV PUPPETEER_CACHE_DIR=/app/node_modules/.cache/puppeteer
 
-######################################################################
+# apt-get update #####################################################
 
 RUN apt-get update
 
