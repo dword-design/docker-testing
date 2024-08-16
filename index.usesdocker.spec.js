@@ -18,12 +18,12 @@ export default tester(
         await outputFiles({
           'index.js': endent`
             import express from 'express'
-            import puppeteer from '@dword-design/puppeteer'
+            import { chromium } from 'playwright'
 
             const server = express()
               .get('/', (req, res) => res.send('<span class="emoji">🙌</span>'))
               .listen(3000)
-            const browser = await puppeteer.launch()
+            const browser = await chromium.launch()
             const page = await browser.newPage()
             await page.goto('http://localhost:3000')
             const emoji = await page.waitForSelector('.emoji')
@@ -44,7 +44,7 @@ export default tester(
           'self',
           'bash',
           '-c',
-          'yarn add @dword-design/puppeteer express && node index.js',
+          'yarn add playwright playwright-chromium express && node index.js',
         ]);
 
         expect(await fs.readFile('screenshot.png')).toMatchImageSnapshot(this);
