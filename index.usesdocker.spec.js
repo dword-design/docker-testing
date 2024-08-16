@@ -17,14 +17,13 @@ export default tester(
       return withLocalTmpDir(async () => {
         await outputFiles({
           'index.js': endent`
-            console.log('running file')
             import express from 'express'
-            import puppeteer from '@dword-design/puppeteer'
+            import { chromium } from 'playwright'
 
             const server = express()
               .get('/', (req, res) => res.send('<span class="emoji">🙌</span>'))
               .listen(3000)
-            const browser = await puppeteer.launch()
+            const browser = await chromium.launch()
             const page = await browser.newPage()
             await page.goto('http://localhost:3000')
             const emoji = await page.waitForSelector('.emoji')
@@ -38,20 +37,33 @@ export default tester(
           }),
         });
 
-        await execa(
-          'docker',
-          [
+        try {
+          await execa('docker', [
             'run',
             '--rm',
             '-v',
             `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
             'self',
             'bash',
             '-c',
-            'echo "nodeLinker: node-modules\ncompressionLevel: mixed\nenableGlobalCache: false" > .yarnrc.yml && yarn init -2 && yarn add @dword-design/puppeteer express && node index.js',
-          ],
-          { stdio: 'inherit' },
-        );
+            'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn init -2 && yarn add playwright playwright-chromium express && node index.js',
+          ]);
+        } finally {
+          // fix permissions
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            `chown -hR ${userInfo.uid}:${userInfo.gid} /app`,
+          ]);
+        }
 
         expect(await fs.readFile('screenshot.png')).toMatchImageSnapshot(this);
       });

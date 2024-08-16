@@ -1,3 +1,16 @@
+# [2.2.0](https://github.com/dword-design/docker-testing/compare/v2.1.0...v2.2.0) (2024-08-16)
+
+
+### Bug Fixes
+
+* revert corepack ([de52725](https://github.com/dword-design/docker-testing/commit/de5272571b264975bf2ea125b69e3a8ce40621d8))
+* trigger ([04551c6](https://github.com/dword-design/docker-testing/commit/04551c6731de2435cd49b04c128e9f7ca15aed1c))
+
+
+### Features
+
+* corepack ([e27f88c](https://github.com/dword-design/docker-testing/commit/e27f88cdfbe4d511973da2ad0bc961c6ce9ad8b3))
+
 # [2.1.0](https://github.com/dword-design/docker-testing/compare/v2.0.2...v2.1.0) (2024-04-18)
 
 
