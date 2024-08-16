@@ -17,6 +17,7 @@ export default tester(
       return withLocalTmpDir(async () => {
         await outputFiles({
           'index.js': endent`
+            console.log('running file')
             import express from 'express'
             import puppeteer from '@dword-design/puppeteer'
 
@@ -31,21 +32,26 @@ export default tester(
             await browser.close()
             await server.close()
           `,
-          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+          'package.json': JSON.stringify({
+            name: 'foo',
+            type: 'module',
+          }),
         });
 
-        await execa('docker', [
-          'run',
-          '--rm',
-          '-v',
-          `${process.cwd()}:/app`,
-          '-v',
-          '/app/node_modules',
-          'self',
-          'bash',
-          '-c',
-          'yarn add @dword-design/puppeteer express && node index.js',
-        ]);
+        await execa(
+          'docker',
+          [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            'self',
+            'bash',
+            '-c',
+            'echo "nodeLinker: node-modules\ncompressionLevel: mixed\nenableGlobalCache: false" > .yarnrc.yml && yarn init -2 && yarn add @dword-design/puppeteer express && node index.js',
+          ],
+          { stdio: 'inherit' },
+        );
 
         expect(await fs.readFile('screenshot.png')).toMatchImageSnapshot(this);
       });
