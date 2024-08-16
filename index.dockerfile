@@ -1,5 +1,9 @@
 FROM node:20-slim
 
+# Corepack ###########################################################
+
+RUN corepack enable
+
 # Puppeteer ##########################################################
 
 # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker
