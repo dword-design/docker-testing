@@ -16,6 +16,7 @@ export default tester(
     emoji() {
       return withLocalTmpDir(async () => {
         await outputFiles({
+          '.yarnrc.yml': 'nodeLinker: node-modules\n',
           'index.js': endent`
             import express from 'express'
             import { chromium } from 'playwright'
@@ -31,25 +32,30 @@ export default tester(
             await browser.close()
             await server.close()
           `,
-          'package.json': JSON.stringify({
-            name: 'foo',
-            type: 'module',
-          }),
+          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+          'yarn.lock': '',
         });
 
+        await execaCommand('yarn set version stable');
+        await execaCommand('yarn add playwright playwright-chromium express');
+
         try {
-          await execa('docker', [
-            'run',
-            '--rm',
-            '-v',
-            `${process.cwd()}:/app`,
-            '-v',
-            '/app/node_modules',
-            'self',
-            'bash',
-            '-c',
-            'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn set version stable && yarn add playwright playwright-chromium express && node index.js',
-          ]);
+          await execa(
+            'docker',
+            [
+              'run',
+              '--rm',
+              '-v',
+              `${process.cwd()}:/app`,
+              '-v',
+              '/app/node_modules',
+              'self',
+              'bash',
+              '-c',
+              'yarn --immutable && node index.js',
+            ],
+            { all: true },
+          );
         } finally {
           // fix permissions
           await execa('docker', [
@@ -129,6 +135,7 @@ export default tester(
     playwright: () =>
       withLocalTmpDir(async () => {
         await outputFiles({
+          '.yarnrc.yml': 'nodeLinker: node-modules\n',
           'index.js': endent`
             import { chromium } from 'playwright'
 
@@ -136,7 +143,11 @@ export default tester(
             await browser.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+          'yarn.lock': '',
         });
+
+        await execaCommand('yarn set version stable');
+        await execaCommand('yarn add playwright playwright-chromium');
 
         try {
           await execa('docker', [
@@ -149,7 +160,7 @@ export default tester(
             'self',
             'bash',
             '-c',
-            'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn set version stable && yarn add playwright playwright-chromium && node /app/index.js',
+            'yarn --immutable && node index.js',
           ]);
         } finally {
           // fix permissions
@@ -170,6 +181,7 @@ export default tester(
     'playwright multiple runs': () =>
       withLocalTmpDir(async () => {
         await outputFiles({
+          '.yarnrc.yml': 'nodeLinker: node-modules\n',
           'index.js': endent`
             import { chromium } from 'playwright'
 
@@ -177,8 +189,11 @@ export default tester(
             await browser.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+          'yarn.lock': '',
         });
 
+        await execaCommand('yarn set version stable');
+        await execaCommand('yarn add playwright playwright-chromium');
         const volumeName = uuid();
 
         await execa('docker', [
@@ -191,7 +206,7 @@ export default tester(
           'self',
           'bash',
           '-c',
-          'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn set version stable && yarn add playwright playwright-chromium && node /app/index.js',
+          'yarn --immutable && node index.js',
         ]);
 
         try {
@@ -205,7 +220,7 @@ export default tester(
             'self',
             'bash',
             '-c',
-            'yarn --frozen-lockfile && node /app/index.js',
+            'yarn --immutable && node index.js',
           ]);
         } finally {
           // fix permissions
@@ -229,6 +244,7 @@ export default tester(
     puppeteer: () =>
       withLocalTmpDir(async () => {
         await outputFiles({
+          '.yarnrc.yml': 'nodeLinker: node-modules\n',
           'index.js': endent`
             import puppeteer from '@dword-design/puppeteer'
 
@@ -236,7 +252,11 @@ export default tester(
             await browser.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+          'yarn.lock': '',
         });
+
+        await execaCommand('yarn set version stable');
+        await execaCommand('yarn add @dword-design/puppeteer');
 
         try {
           await execa('docker', [
@@ -249,7 +269,7 @@ export default tester(
             'self',
             'bash',
             '-c',
-            'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn set version stable && yarn add @dword-design/puppeteer && node /app/index.js',
+            'yarn --immutable && node index.js',
           ]);
         } finally {
           // fix permissions
@@ -270,6 +290,7 @@ export default tester(
     'puppeteer multiple runs': () =>
       withLocalTmpDir(async () => {
         await outputFiles({
+          '.yarnrc.yml': 'nodeLinker: node-modules\n',
           'index.js': endent`
             import puppeteer from '@dword-design/puppeteer'
 
@@ -277,8 +298,11 @@ export default tester(
             await browser.close()
           `,
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+          'yarn.lock': '',
         });
 
+        await execaCommand('yarn set version stable');
+        await execaCommand('yarn add @dword-design/puppeteer');
         const volumeName = uuid();
 
         await execa('docker', [
@@ -291,7 +315,7 @@ export default tester(
           'self',
           'bash',
           '-c',
-          'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn set version stable && yarn add @dword-design/puppeteer && node /app/index.js',
+          'yarn --immutable && node index.js',
         ]);
 
         try {
@@ -305,7 +329,7 @@ export default tester(
             'self',
             'bash',
             '-c',
-            'yarn --frozen-lockfile && node /app/index.js',
+            'yarn --immutable && node index.js',
           ]);
         } finally {
           // fix permissions
