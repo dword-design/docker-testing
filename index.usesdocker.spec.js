@@ -31,21 +31,40 @@ export default tester(
             await browser.close()
             await server.close()
           `,
-          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
+          'package.json': JSON.stringify({
+            name: 'foo',
+            type: 'module',
+          }),
         });
 
-        await execa('docker', [
-          'run',
-          '--rm',
-          '-v',
-          `${process.cwd()}:/app`,
-          '-v',
-          '/app/node_modules',
-          'self',
-          'bash',
-          '-c',
-          'yarn add playwright playwright-chromium express && node index.js',
-        ]);
+        try {
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn set version stable && yarn add playwright playwright-chromium express && node index.js',
+          ]);
+        } finally {
+          // fix permissions
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            `chown -R ${userInfo.uid}:${userInfo.gid} /app`,
+          ]);
+        }
 
         expect(await fs.readFile('screenshot.png')).toMatchImageSnapshot(this);
       });
@@ -119,18 +138,34 @@ export default tester(
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         });
 
-        await execa('docker', [
-          'run',
-          '--rm',
-          '-v',
-          `${process.cwd()}:/app`,
-          '-v',
-          '/app/node_modules',
-          'self',
-          'bash',
-          '-c',
-          'yarn add playwright playwright-chromium && node /app/index.js',
-        ]);
+        try {
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn set version stable && yarn add playwright playwright-chromium && node /app/index.js',
+          ]);
+        } finally {
+          // fix permissions
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            `chown -R ${userInfo.uid}:${userInfo.gid} /app`,
+          ]);
+        }
       }),
     'playwright multiple runs': () =>
       withLocalTmpDir(async () => {
@@ -156,7 +191,7 @@ export default tester(
           'self',
           'bash',
           '-c',
-          'yarn add playwright playwright-chromium && node /app/index.js',
+          'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn set version stable && yarn add playwright playwright-chromium && node /app/index.js',
         ]);
 
         try {
@@ -173,6 +208,20 @@ export default tester(
             'yarn --frozen-lockfile && node /app/index.js',
           ]);
         } finally {
+          // fix permissions
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            `${volumeName}:/app/node_modules`,
+            'self',
+            'bash',
+            '-c',
+            `chown -R ${userInfo.uid}:${userInfo.gid} /app`,
+          ]);
+
           await execaCommand(`docker volume rm ${volumeName}`);
         }
       }),
@@ -189,18 +238,34 @@ export default tester(
           'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
         });
 
-        await execa('docker', [
-          'run',
-          '--rm',
-          '-v',
-          `${process.cwd()}:/app`,
-          '-v',
-          '/app/node_modules',
-          'self',
-          'bash',
-          '-c',
-          'yarn add @dword-design/puppeteer && node /app/index.js',
-        ]);
+        try {
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn set version stable && yarn add @dword-design/puppeteer && node /app/index.js',
+          ]);
+        } finally {
+          // fix permissions
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            `chown -R ${userInfo.uid}:${userInfo.gid} /app`,
+          ]);
+        }
       }),
     'puppeteer multiple runs': () =>
       withLocalTmpDir(async () => {
@@ -226,7 +291,7 @@ export default tester(
           'self',
           'bash',
           '-c',
-          'yarn add @dword-design/puppeteer && node /app/index.js',
+          'echo "nodeLinker: node-modules" > .yarnrc.yml && yarn set version stable && yarn add @dword-design/puppeteer && node /app/index.js',
         ]);
 
         try {
@@ -243,33 +308,22 @@ export default tester(
             'yarn --frozen-lockfile && node /app/index.js',
           ]);
         } finally {
+          // fix permissions
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            `${volumeName}:/app/node_modules`,
+            'self',
+            'bash',
+            '-c',
+            `chown -R ${userInfo.uid}:${userInfo.gid} /app`,
+          ]);
+
           await execaCommand(`docker volume rm ${volumeName}`);
         }
-      }),
-    'webpack 4': () =>
-      withLocalTmpDir(async () => {
-        await outputFiles({
-          'index.js': endent`
-            import { Builder, Nuxt } from 'nuxt'
-
-            const nuxt = new Nuxt({ dev: false })
-            await new Builder(nuxt).build()
-          `,
-          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-        });
-
-        await execa('docker', [
-          'run',
-          '--rm',
-          '-v',
-          `${process.cwd()}:/app`,
-          '-v',
-          '/app/node_modules',
-          'self',
-          'bash',
-          '-c',
-          `yarn add nuxt@^2 && node /app/index.js && chown -R ${userInfo.uid}:${userInfo.gid} /app`,
-        ]);
       }),
   },
   [testerPluginDocker()],

@@ -1,5 +1,9 @@
 FROM node:20-slim
 
+# Corepack ###########################################################
+
+RUN corepack enable
+
 # Puppeteer ##########################################################
 
 # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker
@@ -28,7 +32,7 @@ ENV PLAYWRIGHT_BROWSERS_PATH=0
 
 # dot ################################################################
 
-RUN apt-get install -y git graphviz
+RUN apt-get install -y graphviz
 
 # tree-kill-promise ##################################################
 
@@ -39,6 +43,8 @@ RUN apt-get install -y procps
 RUN apt-get install -y fonts-noto-color-emoji
 
 ## Git ###############################################################
+
+RUN apt-get install -y git
 
 # Otherwise we get this error due to permission conflicts between host and container:
 #
