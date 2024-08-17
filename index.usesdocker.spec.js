@@ -40,18 +40,22 @@ export default tester(
         await execaCommand('yarn add playwright playwright-chromium express');
 
         try {
-          await execa('docker', [
-            'run',
-            '--rm',
-            '-v',
-            `${process.cwd()}:/app`,
-            '-v',
-            '/app/node_modules',
-            'self',
-            'bash',
-            '-c',
-            'yarn --immutable && node index.js',
-          ]);
+          await execa(
+            'docker',
+            [
+              'run',
+              '--rm',
+              '-v',
+              `${process.cwd()}:/app`,
+              '-v',
+              '/app/node_modules',
+              'self',
+              'bash',
+              '-c',
+              'yarn --immutable && node index.js',
+            ],
+            { all: true },
+          );
         } finally {
           // fix permissions
           await execa('docker', [
