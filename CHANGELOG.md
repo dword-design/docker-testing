@@ -1,3 +1,11 @@
+## [2.2.2](https://github.com/dword-design/docker-testing/compare/v2.2.1...v2.2.2) (2024-08-17)
+
+
+### Bug Fixes
+
+* foo ([5f944a2](https://github.com/dword-design/docker-testing/commit/5f944a2c8cd08a31029c9dfbb86668aa5026625e))
+* lock file maintenance ([#181](https://github.com/dword-design/docker-testing/issues/181)) ([4abee2c](https://github.com/dword-design/docker-testing/commit/4abee2cdc394df9f2070a64262febaf8fe3f238a))
+
 ## [2.2.1](https://github.com/dword-design/docker-testing/compare/v2.2.0...v2.2.1) (2024-08-17)
 
 
