@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/dword-design/docker-testing/compare/v2.2.0...v2.2.1) (2024-08-17)
+
+
+### Bug Fixes
+
+* yarn 4 ([#182](https://github.com/dword-design/docker-testing/issues/182)) ([16201be](https://github.com/dword-design/docker-testing/commit/16201be2c26992089ac8b76f48a00d27e5069d3f))
+
 # [2.2.0](https://github.com/dword-design/docker-testing/compare/v2.1.0...v2.2.0) (2024-08-16)
 
 
