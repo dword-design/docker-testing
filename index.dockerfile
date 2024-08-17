@@ -52,7 +52,7 @@ RUN apt-get install -y git
 # To add an exception for this directory, call:
 # 
 #   git config --global --add safe.directory /app
-# RUN git config --global --add safe.directory /app
+RUN git config --global --add safe.directory /app
 
 ######################################################################
 
