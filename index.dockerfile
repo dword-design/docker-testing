@@ -3,7 +3,6 @@ FROM node:20-slim
 # Corepack ###########################################################
 
 RUN corepack enable
-# ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 
 # Puppeteer ##########################################################
 
