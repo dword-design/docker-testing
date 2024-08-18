@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/dword-design/docker-testing/compare/v2.2.2...v2.2.3) (2024-08-18)
+
+
+### Bug Fixes
+
+* pnpm ([#183](https://github.com/dword-design/docker-testing/issues/183)) ([ab2e43c](https://github.com/dword-design/docker-testing/commit/ab2e43c58ea43cda3b4fc9b0601e519a55d74570))
+
 ## [2.2.2](https://github.com/dword-design/docker-testing/compare/v2.2.1...v2.2.2) (2024-08-17)
 
 
