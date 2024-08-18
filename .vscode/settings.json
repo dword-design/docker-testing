@@ -22,7 +22,7 @@
     "LICENSE.md": true,
     "coverage": true,
     "node_modules": true,
-    "yarn.lock": true
+    "pnpm-lock.yaml": true
   },
   "workbench.editor.enablePreview": false
 }
