@@ -16,7 +16,6 @@ export default tester(
     emoji() {
       return withLocalTmpDir(async () => {
         await outputFiles({
-          '.yarnrc.yml': 'nodeLinker: node-modules\n',
           'index.js': endent`
             import express from 'express'
             import { chromium } from 'playwright'
@@ -32,12 +31,18 @@ export default tester(
             await browser.close()
             await server.close()
           `,
-          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-          'yarn.lock': '',
+          'package.json': JSON.stringify({
+            dependencies: {
+              express: '*',
+              playwright: '*',
+              'playwright-chromium': '*',
+            },
+            name: 'foo',
+            type: 'module',
+          }),
         });
 
-        await execaCommand('yarn set version stable');
-        await execaCommand('yarn add playwright playwright-chromium express');
+        await execaCommand('pnpm install');
 
         try {
           await execa(
@@ -52,7 +57,7 @@ export default tester(
               'self',
               'bash',
               '-c',
-              'yarn --immutable && node index.js',
+              'pnpm install --frozen-lockfile && node index.js',
             ],
             { all: true },
           );
@@ -135,19 +140,20 @@ export default tester(
     playwright: () =>
       withLocalTmpDir(async () => {
         await outputFiles({
-          '.yarnrc.yml': 'nodeLinker: node-modules\n',
           'index.js': endent`
             import { chromium } from 'playwright'
 
             const browser = await chromium.launch()
             await browser.close()
           `,
-          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-          'yarn.lock': '',
+          'package.json': JSON.stringify({
+            dependencies: { playwright: '*', 'playwright-chromium': '*' },
+            name: 'foo',
+            type: 'module',
+          }),
         });
 
-        await execaCommand('yarn set version stable');
-        await execaCommand('yarn add playwright playwright-chromium');
+        await execaCommand('pnpm install');
 
         try {
           await execa('docker', [
@@ -160,7 +166,7 @@ export default tester(
             'self',
             'bash',
             '-c',
-            'yarn --immutable && node index.js',
+            'pnpm install --frozen-lockfile && node index.js',
           ]);
         } finally {
           // fix permissions
@@ -181,19 +187,20 @@ export default tester(
     'playwright multiple runs': () =>
       withLocalTmpDir(async () => {
         await outputFiles({
-          '.yarnrc.yml': 'nodeLinker: node-modules\n',
           'index.js': endent`
-            import { chromium } from 'playwright'
+            import { chromium } from 'playwright';
 
-            const browser = await chromium.launch()
-            await browser.close()
+            const browser = await chromium.launch();
+            await browser.close();
           `,
-          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-          'yarn.lock': '',
+          'package.json': JSON.stringify({
+            dependencies: { playwright: '*', 'playwright-chromium': '*' },
+            name: 'foo',
+            type: 'module',
+          }),
         });
 
-        await execaCommand('yarn set version stable');
-        await execaCommand('yarn add playwright playwright-chromium');
+        await execaCommand('pnpm install');
         const volumeName = uuid();
 
         await execa('docker', [
@@ -244,19 +251,20 @@ export default tester(
     puppeteer: () =>
       withLocalTmpDir(async () => {
         await outputFiles({
-          '.yarnrc.yml': 'nodeLinker: node-modules\n',
           'index.js': endent`
             import puppeteer from '@dword-design/puppeteer'
 
             const browser = await puppeteer.launch()
             await browser.close()
           `,
-          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-          'yarn.lock': '',
+          'package.json': JSON.stringify({
+            dependencies: { '@dword-design/puppeteer': '*' },
+            name: 'foo',
+            type: 'module',
+          }),
         });
 
-        await execaCommand('yarn set version stable');
-        await execaCommand('yarn add @dword-design/puppeteer');
+        await execaCommand('pnpm install');
 
         try {
           await execa('docker', [
@@ -269,7 +277,7 @@ export default tester(
             'self',
             'bash',
             '-c',
-            'yarn --immutable && node index.js',
+            'pnpm install --frozen-lockfile && node index.js',
           ]);
         } finally {
           // fix permissions
@@ -290,19 +298,20 @@ export default tester(
     'puppeteer multiple runs': () =>
       withLocalTmpDir(async () => {
         await outputFiles({
-          '.yarnrc.yml': 'nodeLinker: node-modules\n',
           'index.js': endent`
             import puppeteer from '@dword-design/puppeteer'
 
             const browser = await puppeteer.launch()
             await browser.close()
           `,
-          'package.json': JSON.stringify({ name: 'foo', type: 'module' }),
-          'yarn.lock': '',
+          'package.json': JSON.stringify({
+            dependencies: { '@dword-design/puppeteer': '*' },
+            name: 'foo',
+            type: 'module',
+          }),
         });
 
-        await execaCommand('yarn set version stable');
-        await execaCommand('yarn add @dword-design/puppeteer');
+        await execaCommand('pnpm install');
         const volumeName = uuid();
 
         await execa('docker', [
