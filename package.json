@@ -26,7 +26,7 @@
     "execa": "^9.3.1",
     "fs-extra": "^11.1.0",
     "output-files": "^2.0.0",
-    "uuid": "^10.0.0",
+    "uuid": "^11.0.0",
     "with-local-tmp-dir": "^5.0.0"
   },
   "packageManager": "pnpm@9.7.1+sha256.46f1bbc8f8020aa9869568c387198f1a813f21fb44c82f400e7d1dbde6c70b40",
