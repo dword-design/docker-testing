@@ -247,6 +247,48 @@ export default tester(
           await execaCommand(`docker volume rm ${volumeName}`);
         }
       }),
+    'pnpm store outside app path on host': () =>
+      withLocalTmpDir(async () => {
+        await fs.outputFile(
+          'package.json',
+          JSON.stringify({
+            dependencies: { globby: '*' },
+            name: 'foo',
+            type: 'module',
+          }),
+        );
+
+        try {
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            'corepack use pnpm@latest',
+          ]);
+
+          expect(await fs.exists('.pnpm-store')).toEqual(false);
+        } finally {
+          // fix permissions
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            `chown -R ${userInfo.uid}:${userInfo.gid} /app`,
+          ]);
+        }
+      }),
     ps: () => execaCommand('docker run --rm self ps'),
     puppeteer: () =>
       withLocalTmpDir(async () => {
