@@ -1,8 +1,12 @@
-FROM node:20-slim
+FROM node:22-slim
 
 # Corepack ###########################################################
 
 RUN corepack enable
+
+# pnpm ###############################################################
+
+RUN pnpm config set store-dir /pnpm/store
 
 # Puppeteer ##########################################################
 

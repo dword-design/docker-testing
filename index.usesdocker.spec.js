@@ -3,6 +3,7 @@ import tester from '@dword-design/tester';
 import testerPluginDocker from '@dword-design/tester-plugin-docker';
 import { execa, execaCommand } from 'execa';
 import fs from 'fs-extra';
+import { globby } from 'globby';
 import os from 'os';
 import outputFiles from 'output-files';
 import { v4 as uuid } from 'uuid';
@@ -245,6 +246,54 @@ export default tester(
           ]);
 
           await execaCommand(`docker volume rm ${volumeName}`);
+        }
+      }),
+    'pnpm store outside app path on host': () =>
+      withLocalTmpDir(async () => {
+        await fs.outputFile(
+          'package.json',
+          JSON.stringify({
+            dependencies: { globby: '*' },
+            name: 'foo',
+            type: 'module',
+          }),
+        );
+
+        await execaCommand('pnpm install');
+
+        try {
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            'pnpm install --frozen-lockfile',
+          ]);
+
+          expect(await globby('*', { onlyFiles: false })).toEqual([
+            'node_modules',
+            'package.json',
+            'pnpm-lock.yaml',
+          ]);
+        } finally {
+          // fix permissions
+          await execa('docker', [
+            'run',
+            '--rm',
+            '-v',
+            `${process.cwd()}:/app`,
+            '-v',
+            '/app/node_modules',
+            'self',
+            'bash',
+            '-c',
+            `chown -R ${userInfo.uid}:${userInfo.gid} /app`,
+          ]);
         }
       }),
     ps: () => execaCommand('docker run --rm self ps'),
