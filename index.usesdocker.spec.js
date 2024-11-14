@@ -259,19 +259,24 @@ export default tester(
           }),
         );
 
+        await execaCommand('pnpm install');
+
         try {
-          await execa('docker', [
-            'run',
-            '--rm',
-            '-v',
-            `${process.cwd()}:/app`,
-            '-v',
-            '/app/node_modules',
-            'self',
-            'bash',
-            '-c',
-            'corepack use pnpm@latest',
-          ]);
+          await execa(
+            'docker',
+            [
+              'run',
+              '--rm',
+              '-v',
+              `${process.cwd()}:/app`,
+              '-v',
+              '/app/node_modules',
+              'self',
+              'bash',
+              '-c',
+              'pnpm install --frozen-lockfile',
+            ],
+          );
 
           expect(await globby('*', { onlyFiles: false })).toEqual([
             'node_modules',
