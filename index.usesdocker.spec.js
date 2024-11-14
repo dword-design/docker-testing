@@ -3,6 +3,7 @@ import tester from '@dword-design/tester';
 import testerPluginDocker from '@dword-design/tester-plugin-docker';
 import { execa, execaCommand } from 'execa';
 import fs from 'fs-extra';
+import { globby } from 'globby';
 import os from 'os';
 import outputFiles from 'output-files';
 import { v4 as uuid } from 'uuid';
@@ -272,7 +273,11 @@ export default tester(
             'corepack use pnpm@latest',
           ]);
 
-          expect(await fs.exists('.pnpm-store')).toEqual(false);
+          expect(await globby('*', { onlyFiles: false })).toEqual([
+            'node_modules',
+            'package.json',
+            'pnpm-lock.yaml',
+          ]);
         } finally {
           // fix permissions
           await execa('docker', [

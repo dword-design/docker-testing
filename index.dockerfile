@@ -1,15 +1,10 @@
 FROM node:22-slim
 
-# pnpm ###########################################################
-
-# https://pnpm.io/docker
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-ENV PNPM_STORE_PATH="/pnpm/store"
-
 # Corepack ###########################################################
 
 RUN corepack enable
+
+# pnpm ###############################################################
 
 RUN pnpm config set store-dir /pnpm/store
 
