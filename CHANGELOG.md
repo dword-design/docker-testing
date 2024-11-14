@@ -1,3 +1,10 @@
+## [2.2.4](https://github.com/dword-design/docker-testing/compare/v2.2.3...v2.2.4) (2024-11-14)
+
+
+### Bug Fixes
+
+* move pnpm store path ([#188](https://github.com/dword-design/docker-testing/issues/188)) ([c255b88](https://github.com/dword-design/docker-testing/commit/c255b88450f1fd4179e301e39e0c7939d361eb57))
+
 ## [2.2.3](https://github.com/dword-design/docker-testing/compare/v2.2.2...v2.2.3) (2024-08-18)
 
 
