@@ -324,7 +324,7 @@ export default tester(
             type: 'module',
           }),
           'pnpm-workspace.yaml': yaml.stringify({
-            onlyBuiltDependencies: ['playwright-chromium'],
+            onlyBuiltDependencies: ['puppeteer'],
           }),
         });
 
