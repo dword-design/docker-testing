@@ -41,6 +41,9 @@ importers:
       with-local-tmp-dir:
         specifier: ^5.1.1
         version: 5.1.1
+      yaml:
+        specifier: ^2.7.1
+        version: 2.7.1
 
 packages:
 

@@ -8,6 +8,7 @@ import os from 'os';
 import outputFiles from 'output-files';
 import { v4 as uuid } from 'uuid';
 import withLocalTmpDir from 'with-local-tmp-dir';
+import yaml from 'yaml';
 
 const userInfo = os.userInfo();
 
@@ -40,6 +41,9 @@ export default tester(
             },
             name: 'foo',
             type: 'module',
+          }),
+          'pnpm-workspace.yaml': yaml.stringify({
+            onlyBuiltDependencies: ['playwright-chromium'],
           }),
         });
 
@@ -154,6 +158,9 @@ export default tester(
             name: 'foo',
             type: 'module',
           }),
+          'pnpm-workspace.yaml': yaml.stringify({
+            onlyBuiltDependencies: ['playwright-chromium'],
+          }),
         });
 
         await execaCommand('pnpm install');
@@ -200,6 +207,9 @@ export default tester(
             dependencies: { playwright: '*', 'playwright-chromium': '*' },
             name: 'foo',
             type: 'module',
+          }),
+          'pnpm-workspace.yaml': yaml.stringify({
+            onlyBuiltDependencies: ['playwright-chromium'],
           }),
         });
 
