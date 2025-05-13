@@ -138,6 +138,8 @@ export default tester(
           ]);
         }
       }),
+    'java for Firebase Extensions Emulator': () =>
+      execaCommand('docker run --rm self java -version'),
     playwright: () =>
       withLocalTmpDir(async () => {
         await outputFiles({

@@ -30,7 +30,7 @@
     "uuid": "^11.1.0",
     "with-local-tmp-dir": "^5.1.1"
   },
-  "packageManager": "pnpm@9.13.1+sha512.5ac37545851c55ec58521b6c285db6f848f93ca70889beb4145f5b40fe234e4ea4faee4dad12ac5c139e494374c65d9c3a6ec9a25954378fa286a250e68d2f20",
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39",
   "engines": {
     "node": ">=18"
   },
