@@ -226,7 +226,7 @@ export default tester(
           'self',
           'bash',
           '-c',
-          'yarn --immutable && node index.js',
+          'pnpm install --frozen-lockfile && node index.js',
         ]);
 
         try {
@@ -240,7 +240,7 @@ export default tester(
             'self',
             'bash',
             '-c',
-            'yarn --immutable && node index.js',
+            'pnpm install --frozen-lockfile && node index.js',
           ]);
         } finally {
           // fix permissions
@@ -373,6 +373,9 @@ export default tester(
             name: 'foo',
             type: 'module',
           }),
+          'pnpm-workspace.yaml': yaml.stringify({
+            onlyBuiltDependencies: ['playwright-chromium'],
+          }),
         });
 
         await execaCommand('pnpm install');
@@ -388,7 +391,7 @@ export default tester(
           'self',
           'bash',
           '-c',
-          'yarn --immutable && node index.js',
+          'pnpm install --frozen-lockfile && node index.js',
         ]);
 
         try {
@@ -402,7 +405,7 @@ export default tester(
             'self',
             'bash',
             '-c',
-            'yarn --immutable && node index.js',
+            'pnpm install --frozen-lockfile && node index.js',
           ]);
         } finally {
           // fix permissions
