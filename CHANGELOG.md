@@ -1,3 +1,10 @@
+## [2.2.5](https://github.com/dword-design/docker-testing/compare/v2.2.4...v2.2.5) (2025-05-13)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#201](https://github.com/dword-design/docker-testing/issues/201)) ([d47bdf5](https://github.com/dword-design/docker-testing/commit/d47bdf59636cf85fd555aa8db8f1a504887ffd37))
+
 ## [2.2.4](https://github.com/dword-design/docker-testing/compare/v2.2.3...v2.2.4) (2024-11-14)
 
 
