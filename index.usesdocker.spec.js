@@ -323,6 +323,9 @@ export default tester(
             name: 'foo',
             type: 'module',
           }),
+          'pnpm-workspace.yaml': yaml.stringify({
+            onlyBuiltDependencies: ['playwright-chromium'],
+          }),
         });
 
         await execaCommand('pnpm install');
