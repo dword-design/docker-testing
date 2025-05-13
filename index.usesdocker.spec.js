@@ -8,6 +8,7 @@ import os from 'os';
 import outputFiles from 'output-files';
 import { v4 as uuid } from 'uuid';
 import withLocalTmpDir from 'with-local-tmp-dir';
+import yaml from 'yaml';
 
 const userInfo = os.userInfo();
 
@@ -40,6 +41,9 @@ export default tester(
             },
             name: 'foo',
             type: 'module',
+          }),
+          'pnpm-workspace.yaml': yaml.stringify({
+            onlyBuiltDependencies: ['playwright-chromium'],
           }),
         });
 
@@ -138,6 +142,8 @@ export default tester(
           ]);
         }
       }),
+    'java for Firebase Extensions Emulator': () =>
+      execaCommand('docker run --rm self java -version'),
     playwright: () =>
       withLocalTmpDir(async () => {
         await outputFiles({
@@ -151,6 +157,9 @@ export default tester(
             dependencies: { playwright: '*', 'playwright-chromium': '*' },
             name: 'foo',
             type: 'module',
+          }),
+          'pnpm-workspace.yaml': yaml.stringify({
+            onlyBuiltDependencies: ['playwright-chromium'],
           }),
         });
 
@@ -199,6 +208,9 @@ export default tester(
             name: 'foo',
             type: 'module',
           }),
+          'pnpm-workspace.yaml': yaml.stringify({
+            onlyBuiltDependencies: ['playwright-chromium'],
+          }),
         });
 
         await execaCommand('pnpm install');
@@ -214,7 +226,7 @@ export default tester(
           'self',
           'bash',
           '-c',
-          'yarn --immutable && node index.js',
+          'pnpm install --frozen-lockfile && node index.js',
         ]);
 
         try {
@@ -228,7 +240,7 @@ export default tester(
             'self',
             'bash',
             '-c',
-            'yarn --immutable && node index.js',
+            'pnpm install --frozen-lockfile && node index.js',
           ]);
         } finally {
           // fix permissions
@@ -311,6 +323,9 @@ export default tester(
             name: 'foo',
             type: 'module',
           }),
+          'pnpm-workspace.yaml': yaml.stringify({
+            onlyBuiltDependencies: ['puppeteer'],
+          }),
         });
 
         await execaCommand('pnpm install');
@@ -358,6 +373,9 @@ export default tester(
             name: 'foo',
             type: 'module',
           }),
+          'pnpm-workspace.yaml': yaml.stringify({
+            onlyBuiltDependencies: ['playwright-chromium'],
+          }),
         });
 
         await execaCommand('pnpm install');
@@ -373,7 +391,7 @@ export default tester(
           'self',
           'bash',
           '-c',
-          'yarn --immutable && node index.js',
+          'pnpm install --frozen-lockfile && node index.js',
         ]);
 
         try {
@@ -387,7 +405,7 @@ export default tester(
             'self',
             'bash',
             '-c',
-            'yarn --immutable && node index.js',
+            'pnpm install --frozen-lockfile && node index.js',
           ]);
         } finally {
           // fix permissions

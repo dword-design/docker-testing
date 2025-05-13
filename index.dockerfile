@@ -58,6 +58,10 @@ RUN apt-get install -y git
 #   git config --global --add safe.directory /app
 RUN git config --global --add safe.directory /app
 
+## Java (for Firebase Extensions Emulator) ###########################
+
+RUN apt-get install -y openjdk-17-jre
+
 ######################################################################
 
 WORKDIR /app
