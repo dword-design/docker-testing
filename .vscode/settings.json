@@ -6,7 +6,6 @@
     ".cz.json": true,
     ".devcontainer": true,
     ".editorconfig": true,
-    ".eslintrc.json": true,
     ".gitattributes": true,
     ".github": true,
     ".gitignore": true,
@@ -22,6 +21,7 @@
     "LICENSE.md": true,
     "babel.config.json": true,
     "coverage": true,
+    "eslint.config.js": true,
     "node_modules": true,
     "pnpm-lock.yaml": true
   },

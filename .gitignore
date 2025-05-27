@@ -1,7 +1,7 @@
 .DS_Store
 /.env.json
-/.eslintignore
 /.nyc_output
 /.test.env.json
 /coverage
 /node_modules
+/test-results
