@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@dword-design/base':
-        specifier: ^12.0.0
-        version: 12.0.9(@babel/core@7.27.1)(@types/node@22.15.21)(babel-plugin-module-resolver@5.0.2)(jest@27.5.1)(typescript@5.8.3)(vue-eslint-parser@9.4.3(eslint@9.27.0(jiti@1.21.7)))
+        specifier: ^12.0.12
+        version: 12.0.12(@babel/core@7.27.1)(@types/node@22.15.21)(babel-plugin-module-resolver@5.0.2)(jest@27.5.1)(typescript@5.8.3)(vue-eslint-parser@9.4.3(eslint@9.27.0(jiti@1.21.7)))
       '@dword-design/base-config-docker':
         specifier: ^3.0.1
         version: 3.0.1(semantic-release@22.0.12(typescript@5.8.3))
@@ -784,8 +784,8 @@ packages:
     resolution: {integrity: sha512-0Iu+Tz2BwjCF2It+QaeHKHjDAZ0NycjU4KRYhrs94a8U+fQxaZYKUsbycvnrnZK7W1uj9Z/n7RC+EAQCXuSL1w==}
     engines: {node: '>=18'}
 
-  '@dword-design/base@12.0.9':
-    resolution: {integrity: sha512-86CtXSSMlBDkhE2M5gnYhU34kZINQB/jicWSU3jVecF3ICfrpo9h1XLuyp5ffKnWo/rUw2NRSLp51pqwr/nx8Q==}
+  '@dword-design/base@12.0.12':
+    resolution: {integrity: sha512-IPu0cl3NTbeJyL5pAdBu3uTacSgszXyx+pxmaY+bv31TObvbrXysh8oGMtthnK9lunOCxhsvvY6bvlRfm3FGmQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6431,7 +6431,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
-      '@babel/types': 7.27.1
+      '@babel/types': 7.27.3
       esutils: 2.0.3
 
   '@babel/runtime@7.27.1': {}
@@ -6694,7 +6694,7 @@ snapshots:
       - jiti
       - supports-color
 
-  '@dword-design/base@12.0.9(@babel/core@7.27.1)(@types/node@22.15.21)(babel-plugin-module-resolver@5.0.2)(jest@27.5.1)(typescript@5.8.3)(vue-eslint-parser@9.4.3(eslint@9.27.0(jiti@1.21.7)))':
+  '@dword-design/base@12.0.12(@babel/core@7.27.1)(@types/node@22.15.21)(babel-plugin-module-resolver@5.0.2)(jest@27.5.1)(typescript@5.8.3)(vue-eslint-parser@9.4.3(eslint@9.27.0(jiti@1.21.7)))':
     dependencies:
       '@commitlint/cli': 18.6.1(@types/node@22.15.21)(typescript@5.8.3)
       '@commitlint/config-conventional': 18.6.3
@@ -10396,7 +10396,7 @@ snapshots:
       '@babel/core': 7.27.1
       '@babel/generator': 7.27.1
       '@babel/plugin-syntax-typescript': 7.27.1(@babel/core@7.27.1)
-      '@babel/traverse': 7.27.1
+      '@babel/traverse': 7.27.3
       '@babel/types': 7.27.1
       '@jest/transform': 27.5.1
       '@jest/types': 27.5.1
