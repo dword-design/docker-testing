@@ -1,3 +1,10 @@
+## [2.2.6](https://github.com/dword-design/docker-testing/compare/v2.2.5...v2.2.6) (2025-05-27)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v12 ([#205](https://github.com/dword-design/docker-testing/issues/205)) ([30b0822](https://github.com/dword-design/docker-testing/commit/30b082264da4afb23f27fd66222c4acb106225df))
+
 ## [2.2.5](https://github.com/dword-design/docker-testing/compare/v2.2.4...v2.2.5) (2025-05-13)
 
 
