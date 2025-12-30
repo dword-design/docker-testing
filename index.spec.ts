@@ -32,7 +32,7 @@ test('emoji', async ({}, testInfo) => {
       const browser = await chromium.launch();
       const page = await browser.newPage();
       await page.goto('http://localhost:3000');
-      const emoji = page.waitForSelector('.emoji');
+      const emoji = await page.waitForSelector('.emoji');
       await emoji.screenshot({ path: 'screenshot.png' });
       await browser.close();
       await server.close();
