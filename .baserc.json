@@ -1,4 +1,5 @@
 {
   "allowedMatches": ["global-setup.ts"],
+  "macos": false,
   "name": "@dword-design/docker"
 }
