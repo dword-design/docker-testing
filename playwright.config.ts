@@ -1,7 +1,9 @@
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
-  globalSetup: './global-setup.js',
+  fullyParallel: true,
+  globalSetup: './global-setup',
+  preserveOutput: 'failures-only',
   snapshotPathTemplate:
     '{snapshotDir}/{testFileDir}/{testFileName}-snapshots/{arg}{-projectName}{ext}',
 });

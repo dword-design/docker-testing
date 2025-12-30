@@ -1,5 +1,5 @@
 {
-  "allowedMatches": ["global-setup.js"],
-  "name": "@dword-design/docker",
-  "testRunner": "playwright"
+  "allowedMatches": ["global-setup.ts"],
+  "macos": false,
+  "name": "@dword-design/docker"
 }

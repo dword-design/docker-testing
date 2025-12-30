@@ -3,44 +3,44 @@
 <!-- /TITLE -->
 
 <!-- BADGES/ -->
-  <p>
-    <img src="https://img.shields.io/badge/os-linux%20%7C%C2%A0macos%20%7C%C2%A0windows-blue" alt="Linux macOS Windows compatible"><a href="https://github.com/dword-design/docker-testing/actions">
-      <img
-        src="https://github.com/dword-design/docker-testing/workflows/build/badge.svg"
-        alt="Build status"
-      >
-    </a><a href="https://codecov.io/gh/dword-design/docker-testing">
-      <img
-        src="https://codecov.io/gh/dword-design/docker-testing/branch/master/graph/badge.svg"
-        alt="Coverage status"
-      >
-    </a><a href="https://david-dm.org/dword-design/docker-testing">
-      <img src="https://img.shields.io/david/dword-design/docker-testing" alt="Dependency status">
-    </a><img src="https://img.shields.io/badge/renovate-enabled-brightgreen" alt="Renovate enabled"><br/><a href="https://gitpod.io/#https://github.com/dword-design/docker-testing">
-      <img
-        src="https://gitpod.io/button/open-in-gitpod.svg"
-        alt="Open in Gitpod"
-        width="114"
-      >
-    </a><a href="https://www.buymeacoffee.com/dword">
-      <img
-        src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg"
-        alt="Buy Me a Coffee"
-        width="114"
-      >
-    </a><a href="https://paypal.me/SebastianLandwehr">
-      <img
-        src="https://sebastianlandwehr.com/images/paypal.svg"
-        alt="PayPal"
-        width="163"
-      >
-    </a><a href="https://www.patreon.com/dworddesign">
-      <img
-        src="https://sebastianlandwehr.com/images/patreon.svg"
-        alt="Patreon"
-        width="163"
-      >
-    </a>
+<p>
+  <img src="https://img.shields.io/badge/os-linux%20%7C%C2%A0macos%20%7C%C2%A0windows-blue" alt="Linux macOS Windows compatible"><a href="https://github.com/dword-design/docker-testing/actions">
+    <img
+      src="https://github.com/dword-design/docker-testing/workflows/build/badge.svg"
+      alt="Build status"
+    >
+  </a><a href="https://codecov.io/gh/dword-design/docker-testing">
+    <img
+      src="https://codecov.io/gh/dword-design/docker-testing/branch/master/graph/badge.svg"
+      alt="Coverage status"
+    >
+  </a><a href="https://david-dm.org/dword-design/docker-testing">
+    <img src="https://img.shields.io/david/dword-design/docker-testing" alt="Dependency status">
+  </a><img src="https://img.shields.io/badge/renovate-enabled-brightgreen" alt="Renovate enabled"><br/><a href="https://gitpod.io/#https://github.com/dword-design/docker-testing">
+    <img
+      src="https://gitpod.io/button/open-in-gitpod.svg"
+      alt="Open in Gitpod"
+      width="114"
+    >
+  </a><a href="https://www.buymeacoffee.com/dword">
+    <img
+      src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg"
+      alt="Buy Me a Coffee"
+      width="114"
+    >
+  </a><a href="https://paypal.me/SebastianLandwehr">
+    <img
+      src="https://sebastianlandwehr.com/images/paypal.svg"
+      alt="PayPal"
+      width="163"
+    >
+  </a><a href="https://www.patreon.com/dworddesign">
+    <img
+      src="https://sebastianlandwehr.com/images/patreon.svg"
+      alt="Patreon"
+      width="163"
+    >
+  </a>
 </p>
 <!-- /BADGES -->
 
