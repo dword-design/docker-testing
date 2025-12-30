@@ -15,24 +15,26 @@
     "depcheck": "base depcheck",
     "lint": "base lint",
     "prepare": "base prepare",
-    "test": "base test"
+    "test": "base test",
+    "typecheck": "base typecheck",
+    "verify": "base verify"
   },
   "devDependencies": {
-    "@dword-design/base": "^12.0.12",
-    "@dword-design/base-config-docker": "^3.0.1",
-    "@dword-design/functions": "^6.0.2",
+    "@dword-design/base": "^16.1.6",
+    "@dword-design/base-config-docker": "^4.0.0",
     "@playwright/test": "^1.52.0",
+    "@types/fs-extra": "^11.0.4",
+    "endent": "npm:@dword-design/endent@^1.4.7",
     "execa": "^9.5.3",
     "fs-extra": "^11.3.0",
-    "globby": "^14.1.0",
-    "output-files": "^2.0.32",
-    "uuid": "^11.1.0",
-    "with-local-tmp-dir": "^5.1.1",
+    "globby": "^16.1.0",
+    "output-files": "^3.0.0",
+    "uuid": "^13.0.0",
     "yaml": "^2.7.1"
   },
   "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"
