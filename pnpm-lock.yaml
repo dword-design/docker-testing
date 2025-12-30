@@ -12,8 +12,8 @@ importers:
         specifier: ^16.1.6
         version: 16.1.6(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
       '@dword-design/base-config-docker':
-        specifier: ^4.0.0
-        version: 4.0.0(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)(semantic-release@25.0.2(typescript@5.9.3))
+        specifier: ^4.0.1
+        version: 4.0.1(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)(semantic-release@25.0.2(typescript@5.9.3))
       '@playwright/test':
         specifier: ^1.52.0
         version: 1.57.0
@@ -224,8 +224,8 @@ packages:
     resolution: {integrity: sha512-KTy0OqRDLR5y/zZMnizyx09z/rPlPC/zKhYgH8o/q6PuAjoQAKlRfY4zzv0M64yybQ//6//4H1n14pxaLZfUnA==}
     engines: {node: '>=v18'}
 
-  '@dword-design/base-config-docker@4.0.0':
-    resolution: {integrity: sha512-HEYc04AsJOF11MwaxFrBoiCe8dpqR33RR7hi1W3PMnP48mich0COcLqHj7Y50ja3YQ1qUmS8d0cBUz4AqQAQTg==}
+  '@dword-design/base-config-docker@4.0.1':
+    resolution: {integrity: sha512-vT3qG4fRx9mZchxA6GvvDXU5Jq3V1X3sUshYPS69AMrWPN2tlZ4+soLk6Ld1BLXW/kPMugjj+ci+XQroSlbrvw==}
     engines: {node: '>=22'}
 
   '@dword-design/base-config-node@5.0.3':
@@ -4732,7 +4732,7 @@ snapshots:
       chalk: 5.6.2
     optional: true
 
-  '@dword-design/base-config-docker@4.0.0(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)(semantic-release@25.0.2(typescript@5.9.3))':
+  '@dword-design/base-config-docker@4.0.1(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)(semantic-release@25.0.2(typescript@5.9.3))':
     dependencies:
       '@dword-design/base': 16.1.6(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
       depcheck-package-name: 5.0.0
