@@ -3,6 +3,16 @@
 
 ### Bug Fixes
 
+* foo ([edf6439](https://github.com/dword-design/docker-testing/commit/edf6439baf9432707f197177338dec0863d04b30))
+* multi-platform build ([9425eab](https://github.com/dword-design/docker-testing/commit/9425eab0cf26f692b0eb7b993446cb89d7bb07d6))
+* upgrade base-config-docker ([a332b52](https://github.com/dword-design/docker-testing/commit/a332b520009eba86059fc275f5346d7f2d0291ee))
+* upgrade base-config-docker ([a7415d2](https://github.com/dword-design/docker-testing/commit/a7415d2b57c9e3dcd56c4dfd63d9e27e6784db59))
+
+## [2.2.8](https://github.com/dword-design/docker-testing/compare/v2.2.7...v2.2.8) (2026-01-06)
+
+
+### Bug Fixes
+
 * multi-platform build ([9425eab](https://github.com/dword-design/docker-testing/commit/9425eab0cf26f692b0eb7b993446cb89d7bb07d6))
 * upgrade base-config-docker ([a332b52](https://github.com/dword-design/docker-testing/commit/a332b520009eba86059fc275f5346d7f2d0291ee))
 * upgrade base-config-docker ([a7415d2](https://github.com/dword-design/docker-testing/commit/a7415d2b57c9e3dcd56c4dfd63d9e27e6784db59))
