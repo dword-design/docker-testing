@@ -1,3 +1,11 @@
+## [2.2.8](https://github.com/dword-design/docker-testing/compare/v2.2.7...v2.2.8) (2026-01-06)
+
+
+### Bug Fixes
+
+* multi-platform build ([9425eab](https://github.com/dword-design/docker-testing/commit/9425eab0cf26f692b0eb7b993446cb89d7bb07d6))
+* upgrade base-config-docker ([a7415d2](https://github.com/dword-design/docker-testing/commit/a7415d2b57c9e3dcd56c4dfd63d9e27e6784db59))
+
 ## [2.2.7](https://github.com/dword-design/docker-testing/compare/v2.2.6...v2.2.7) (2025-12-30)
 
 
