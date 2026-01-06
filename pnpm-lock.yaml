@@ -10,10 +10,10 @@ importers:
     devDependencies:
       '@dword-design/base':
         specifier: ^16.1.6
-        version: 16.1.9(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
+        version: 16.1.10(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
       '@dword-design/base-config-docker':
-        specifier: ^4.0.5
-        version: 4.0.5(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
+        specifier: ^4.0.6
+        version: 4.0.6(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
       '@playwright/test':
         specifier: ^1.52.0
         version: 1.57.0
@@ -239,16 +239,16 @@ packages:
     resolution: {integrity: sha512-KTy0OqRDLR5y/zZMnizyx09z/rPlPC/zKhYgH8o/q6PuAjoQAKlRfY4zzv0M64yybQ//6//4H1n14pxaLZfUnA==}
     engines: {node: '>=v18'}
 
-  '@dword-design/base-config-docker@4.0.5':
-    resolution: {integrity: sha512-gzZ3lDQMravHDYoRPY3+JhCtFGzZZpBWFIAw42o6Ir3RK9zE3C6GiYAao7okBFSLxuL5zM8phqqPG8DOo914ng==}
+  '@dword-design/base-config-docker@4.0.6':
+    resolution: {integrity: sha512-sFsOLSYNYMA4XbdbxAOAboN9FI+nBBY6wWw/IXcttXCn0YyJdqW3V45ZTJk5uS7PoHOE4uea/Znd83njDCUPBA==}
     engines: {node: '>=22'}
 
   '@dword-design/base-config-node@5.0.3':
     resolution: {integrity: sha512-GuM/kVVgkDhox+9LViPe6+8PkQeM/zgk3WHDQ+tsZPzQz2TL++7GiEFYm8uFqmPf0sJX3jvw3i7AG2b3jNCN0A==}
     engines: {node: '>=22'}
 
-  '@dword-design/base@16.1.9':
-    resolution: {integrity: sha512-X3l6Wql/n7Qc5mHsMG+kvI/W6ZEotinfYrgo6aYrgURYQM6TP+jDFmqtUjjZMUSIHkWgj+EaocGZ1SfIRYmb9Q==}
+  '@dword-design/base@16.1.10':
+    resolution: {integrity: sha512-6EAVG32DaW0lWRk7sCthOZjPuNADzl0n7mevvrMD602MuZmrAwFFMoei9mp/OS/vGKZQacMLS4ZoF+WJNV3GiQ==}
     engines: {node: '>=22'}
     hasBin: true
 
@@ -4746,10 +4746,10 @@ snapshots:
       chalk: 5.6.2
     optional: true
 
-  '@dword-design/base-config-docker@4.0.5(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)':
+  '@dword-design/base-config-docker@4.0.6(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)':
     dependencies:
       '@codedependant/semantic-release-docker': 5.1.1
-      '@dword-design/base': 16.1.9(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
+      '@dword-design/base': 16.1.10(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
       depcheck-package-name: 5.0.0
       parse-packagejson-name: 1.1.0
       read-pkg: 10.0.0
@@ -4770,7 +4770,7 @@ snapshots:
   '@dword-design/base-config-node@5.0.3(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)':
     dependencies:
       '@babel/core': 7.28.5
-      '@dword-design/base': 16.1.9(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
+      '@dword-design/base': 16.1.10(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
       '@dword-design/depcheck-parser-sass': 6.0.3
       babel-plugin-add-import-extension: 1.6.0(@babel/core@7.28.5)
       babel-plugin-module-resolver: 5.0.2
@@ -4799,7 +4799,7 @@ snapshots:
       - sass
       - supports-color
 
-  '@dword-design/base@16.1.9(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)':
+  '@dword-design/base@16.1.10(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)':
     dependencies:
       '@commitlint/cli': 18.6.1(@types/node@25.0.3)(typescript@5.9.3)
       '@commitlint/config-conventional': 18.6.3

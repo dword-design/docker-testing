@@ -20,11 +20,12 @@
       "@codedependant/semantic-release-docker",
       {
         "dockerFile": "index.dockerfile",
-        "dockerImage": "dworddesign/testing",
+        "dockerImage": "testing",
         "dockerPlatform": [
           "linux/amd64",
           "linux/arm64"
-        ]
+        ],
+        "dockerProject": "dworddesign"
       }
     ]
   ]
