@@ -39,8 +39,8 @@ jobs:
       - if: github.ref == 'refs/heads/master'
         run: docker build --file index.dockerfile --tag dworddesign/testing .
       - env:
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_REGISTRY_USER: ${{ secrets.DOCKER_USERNAME }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
         name: Release
