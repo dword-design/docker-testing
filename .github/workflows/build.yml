@@ -37,7 +37,11 @@ jobs:
         name: Push changed files
         run: pnpm dw-ci push-changed-files
       - if: github.ref == 'refs/heads/master'
-        run: docker build --file index.dockerfile --tag dworddesign/testing .
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - if: github.ref == 'refs/heads/master'
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
       - env:
           DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           DOCKER_REGISTRY_USER: ${{ secrets.DOCKER_USERNAME }}
