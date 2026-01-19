@@ -13,7 +13,7 @@ importers:
         version: 16.1.10(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
       '@dword-design/base-config-docker':
         specifier: ^4.0.6
-        version: 4.0.6(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
+        version: 4.0.6(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))
       '@playwright/test':
         specifier: ^1.52.0
         version: 1.57.0
@@ -4746,7 +4746,7 @@ snapshots:
       chalk: 5.6.2
     optional: true
 
-  '@dword-design/base-config-docker@4.0.6(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)':
+  '@dword-design/base-config-docker@4.0.6(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))':
     dependencies:
       '@codedependant/semantic-release-docker': 5.1.1
       '@dword-design/base': 16.1.10(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)
@@ -4759,12 +4759,9 @@ snapshots:
       - '@types/node'
       - '@typescript-eslint/parser'
       - '@typescript-eslint/utils'
-      - '@vue/compiler-core'
-      - esbuild
       - eslint-import-resolver-node
       - eslint-plugin-import
       - monocart-coverage-reports
-      - sass
       - supports-color
 
   '@dword-design/base-config-node@5.0.3(@types/node@25.0.3)(@typescript-eslint/parser@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/utils@8.51.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(sass@1.97.1)':
