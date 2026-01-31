@@ -1,3 +1,10 @@
+## [2.2.9](https://github.com/dword-design/docker-testing/compare/v2.2.8...v2.2.9) (2026-01-31)
+
+
+### Bug Fixes
+
+* upgrade base ([37103d7](https://github.com/dword-design/docker-testing/commit/37103d70efd3e07ce49cdf0e4486b5961ca37f26))
+
 ## [2.2.8](https://github.com/dword-design/docker-testing/compare/v2.2.7...v2.2.8) (2026-01-06)
 
 
