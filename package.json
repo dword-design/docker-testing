@@ -28,7 +28,7 @@
     "execa": "^9.5.3",
     "fs-extra": "^11.3.0",
     "globby": "^16.1.0",
-    "output-files": "^3.0.0",
+    "output-files": "^4.0.0",
     "uuid": "^13.0.0",
     "yaml": "^2.7.1"
   },
